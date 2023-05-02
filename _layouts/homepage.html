@@ -1,5 +1,99 @@
 {% assign current_page = 'Homepage' %}
 {% include head.html %}
 {% include nav.html %}
-<h1>I'm homepage!=</h1>
+<div id="homepage">
+<div class="video">
+    <div class="video__main">
+       <!--<video id="background-video" width="100%" height="100%" autoplay loop muted >
+            <source src="/img/loading_video_small.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>-->
+          <video id="background-video" autoplay muted poster="https://assets.codepen.io/6093409/river.jpg">
+<source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
+</video>
+        
+    </div>
+    <div class="video__text">
+        <div class="container mx-auto flex justify-between items-center">
+        <div>
+        <b><h2>О Земуну</h2></b>
+        <p>Као што је Харбург поред Хамбурга или Бадалона поред Барселоне, тако је и Земун поред Београда. Рекли бисмо – град у граду!</p>
+        </div>
+        <a href="/about" class="btn">Опширније</a>
+    </div>
+    </div>
+</div>
+<!--<div class="justify-between covid flex container mx-auto h-screen items-center">
+    <p class="w-1/2">План припреме мера за спречавање појаве и ширења епидемије заразне болести у Туристичко-културном центру ГО Земун<p>
+    <img class="" src="/img/city.jpg">
+</div>-->
+<div class="gallery container mx-auto">
+    <h2>Галерија</h2>
+    <div>
+        <div>
+            <div class="container-img">
+           
+                <div class="gallery-container">
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674371886/logrocket-css-masonry/10.jpg"
+                      alt="blog post one"
+                    />
+           
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674344289/logrocket-css-masonry/8.jpg"
+                      alt="blog post two"
+                    />
+           
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674373487/logrocket-css-masonry/window.jpg"
+                      alt="blog post three"
+                    />
+           
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674344282/logrocket-css-masonry/4.jpg"
+                      alt="blog post four"
+                    />
+           
+           
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674344280/logrocket-css-masonry/7.jpg"
+                      alt="blog post five"
+                    />
+    
+           
+                 
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674344279/logrocket-css-masonry/6.jpg"
+                      alt="blog post six"
+                    />
+                   
+           
+                 
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674344278/logrocket-css-masonry/1.jpg"
+                      alt="blog post seven"
+                    />
+                 
+           
+                
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674344277/logrocket-css-masonry/9.jpg"
+                      alt="blog post eight"
+                    />
+                   
+           
+        
+                    <img
+                      src="https://res.cloudinary.com/dkfptto8m/image/upload/v1674344276/logrocket-css-masonry/3.jpg"
+                      alt="blog post nine"
+                    />
+                   
+                </div>
+            </div>
+              </div>
+<div class="events gallery container mx-auto">
+    <h2>Најаве догађаја</h2>
+</div>
+</div>
+</div>
 {% include footer.html %}
