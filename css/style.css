@@ -216,11 +216,7 @@ footer {
 
 .about-background {
     height: 100vh;
-
-
 }
-
-
 
 
 .about-text {
@@ -233,6 +229,25 @@ footer {
 }
 
 .about-text h1 {
+    font-size: 52px;
+    margin-bottom: 40px;
+}
+
+.contact-background {
+    height: 100vh;
+}
+
+
+.contact-text {
+    width: 50%;
+    height: 100%;
+    opacity: 0.9;
+    /*padding: 80px;*/
+    background-color: #181818;
+    color: white;
+}
+
+.contact-text h1 {
     font-size: 52px;
     margin-bottom: 40px;
 }
@@ -306,6 +321,27 @@ footer {
   .gallery {
     padding-top: 60px;
     padding-bottom: 60px;
+    /*background-color: #181818;
+    color: white;*/
+  }
+
+.contact-box {
+
+    padding: 30px;
+}
+
+.contact-box h2 {
+    text-transform: uppercase;
+}
+
+.events {
+    padding-top: 60px;
+    padding-bottom: 60px; 
+}
+
+.events h2 {
+    font-size: 52px;
+    margin-bottom: 40px;
   }
 
  
