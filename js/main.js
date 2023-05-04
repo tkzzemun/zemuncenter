@@ -19,7 +19,7 @@ const cardTotalElem = document.getElementById("card-total");
 const loader = document.getElementById("loader");
 
 //const cardLimit = 99;
-const cardLimit = 18;
+const cardLimit = 36;
 const cardIncrease = 9;
 const pageCount = Math.ceil(cardLimit / cardIncrease);
 let currentPage = 1;
