@@ -381,11 +381,11 @@ footer {
   }
 
   .event-img:hover img {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 
   .event-img img {
-    transition: transform 0.25s;
+    transition: transform 0.2s ease-in-out;
   }
 
   .event-img {
@@ -394,6 +394,24 @@ footer {
     height: 500px;
     height: auto;
   }
+
+.navigation-item-line {
+  height: 1px;
+  background-color: transparent;
+  margin-top: 5px;
+}
+
+.navigation li:hover  .navigation-item-line {
+  background-color: white;
+  animation: loadNavigationLine ease-in-out forwards 0.5s;
+}
+
+@keyframes  loadNavigationLine {
+  0% { width: 0%; }
+  15% { width: 0%; }
+  100% { width: 100%; }
+}
+
  
 
 
