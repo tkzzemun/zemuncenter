@@ -3,7 +3,7 @@
 body {
     font-family: 'Tenor Sans', sans-serif;
     animation: smoothLoad;
-    animation-duration: 2.5s;
+    animation-duration: 2s;
     background-color: #181818;
     /*background-color:antiquewhite;*/
 }
