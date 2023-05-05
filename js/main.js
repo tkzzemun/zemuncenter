@@ -4,15 +4,15 @@
 
 //gallery js
 
-if (document.body.id === 'Homepage') {
+/*if (document.body.id === 'Homepage') {
 
 const cardContainer = document.getElementById("card-container");
 const cardCountElem = document.getElementById("card-count");
 const cardTotalElem = document.getElementById("card-total");
-const loader = document.getElementById("loader");
+const loader = document.getElementById("loader");*/
 
 //const cardLimit = 99;
-const cardLimit = 36;
+/*const cardLimit = 36;
 const cardIncrease = 9;
 const pageCount = Math.ceil(cardLimit / cardIncrease);
 let currentPage = 1;
@@ -91,13 +91,14 @@ window.onload = function () {
 };
 
 window.addEventListener("scroll", handleInfiniteScroll);
-}
+}*/
 
 
 //animation on scroll
 
 
 if (document.querySelector('.reveal')) {
+    console.log('reveal')
     ScrollReveal().reveal('.reveal', {
       distance: '150px',
       duration: 1300,
