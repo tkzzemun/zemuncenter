@@ -2,11 +2,16 @@
 
 body {
     font-family: 'Tenor Sans', sans-serif;
+    animation: smoothLoad;
+    animation-duration: 2.5s;
+    background-color: #181818;
     /*background-color:antiquewhite;*/
 }
 
-h1 {
-}
+@keyframes smoothLoad {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
 
 header {
     background-color: #181818;
@@ -182,11 +187,13 @@ footer {
 #official {
     padding-top: 50px;
     padding-bottom: 50px;
+    background-color: white;
 }  
 
 #official h1 {
     font-size: 52px; 
     margin-bottom: 40px;
+    
 }
 
 .official-box {
@@ -344,6 +351,8 @@ footer {
 .events {
     padding-top: 60px;
     padding-bottom: 60px; 
+    background-color: white;
+    
 }
 
 .events h2 {
