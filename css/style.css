@@ -2,10 +2,9 @@
 
 body {
     font-family: 'Tenor Sans', sans-serif;
-   /* animation: smoothLoad;
-    animation-duration: 2s;*/
+    animation: smoothLoad;
+    animation-duration: 2s;
     background-color: #181818;
-    /*background-color:antiquewhite;*/
 }
 
 @keyframes smoothLoad {
@@ -185,8 +184,6 @@ footer {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: white;
-    animation: smoothLoad;
-    animation-duration: 2s;
     /*background-color: #181818;*/
 }  
 
