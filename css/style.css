@@ -2,8 +2,8 @@
 
 body {
     font-family: 'Tenor Sans', sans-serif;
-    animation: smoothLoad;
-    animation-duration: 2s;
+   /* animation: smoothLoad;
+    animation-duration: 2s;*/
     background-color: #181818;
     /*background-color:antiquewhite;*/
 }
@@ -115,9 +115,6 @@ overflow-y: hidden;
   
   }
 
-.social {
-    /*display: flex; */
-}
 
 .social img {
    margin-right: 10px;
@@ -188,6 +185,9 @@ footer {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: white;
+    animation: smoothLoad;
+    animation-duration: 2s;
+    /*background-color: #181818;*/
 }  
 
 #official h1 {
@@ -378,12 +378,6 @@ footer {
 
   .event-item:nth-child(even) {
     flex-direction: row-reverse;
-  }
-
-  .event-item:nth-child(even) .event-img {
-    /*margin-left: 40px;
-    margin-right: 0;*/
-
   }
 
   .event-item:nth-child(even) .event-text {
