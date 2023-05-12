@@ -9,11 +9,48 @@
     new SmoothScroll({ target: document, speed: 40, smooth: 16 })
   }*/
 
+//mobile menu logic
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+let TOGGLE_MENU = false;
+
+const burger = document.querySelector('.burger');
+const mobileMenu = document.querySelector('.mobile-menu');
+const header = document.querySelector('.header');
+burger.addEventListener('click', () => {
+  TOGGLE_MENU = !TOGGLE_MENU
+  if (TOGGLE_MENU) {
+    console.log('i clicked')
+    mobileMenu.classList.remove('hidden');
+    header.classList.add('open-burger')
+    /*header.classList.add('black');*/
+    mobileMenu.classList.add('mobile-menu-height')
+    document.body.style.top = `-${window.scrollY}px`
+    document.body.style.right = `0px`
+    document.body.style.left = `0px`
+    document.body.style.position = 'fixed'
+  }
+  if (!TOGGLE_MENU) {
+    mobileMenu.classList.add('hidden');
+    header.classList.remove('open-burger')
+    mobileMenu.classList.remove('mobile-menu-height')
+    /*header.classList.remove('black')*/
+    const scrollY = document.body.style.top
+    document.body.style.position = ''
+    document.body.style.top = ''
+    document.body.style.right = ``
+    document.body.style.left = ``
+
+    window.scrollTo({top: parseInt(scrollY || '0') * -1, behavior: 'instant' })
+
+  }
+
+})
+
+
 //animation on scroll
 
 
 if (document.querySelector('.reveal')) {
-    console.log('reveal')
     ScrollReveal().reveal('.reveal', {
       distance: '150px',
       duration: 1300,
