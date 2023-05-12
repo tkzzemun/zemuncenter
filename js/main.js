@@ -19,10 +19,8 @@ const header = document.querySelector('.header');
 burger.addEventListener('click', () => {
   TOGGLE_MENU = !TOGGLE_MENU
   if (TOGGLE_MENU) {
-    console.log('i clicked')
     mobileMenu.classList.remove('hidden');
     header.classList.add('open-burger')
-    /*header.classList.add('black');*/
     mobileMenu.classList.add('mobile-menu-height')
     document.body.style.top = `-${window.scrollY}px`
     document.body.style.right = `0px`
@@ -33,7 +31,6 @@ burger.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
     header.classList.remove('open-burger')
     mobileMenu.classList.remove('mobile-menu-height')
-    /*header.classList.remove('black')*/
     const scrollY = document.body.style.top
     document.body.style.position = ''
     document.body.style.top = ''
@@ -46,8 +43,23 @@ burger.addEventListener('click', () => {
 
 })
 
+//header logic 
+
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header')
+    let scroll = window.scrollY;
+    if (scroll > 50) {
+      header.classList.add('scrolled')
+    }
+    else {
+      header.classList.remove('scrolled')
+    }
+  });
+
 
 //animation on scroll
+
 
 
 if (document.querySelector('.reveal')) {
