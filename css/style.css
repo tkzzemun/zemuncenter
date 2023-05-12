@@ -80,10 +80,6 @@ nav {
     margin-top: 5px;
   }
   
-  .navigation li:hover  .navigation-item-line {
-    background-color: white;
-    animation: loadNavigationLine ease-in-out forwards 0.5s;
-  }
   
   @keyframes  loadNavigationLine {
       0% { width: 0%; }
@@ -452,15 +448,6 @@ footer {
     padding-right: 20px;
 }
 
-.map-background {
-    background-color:aliceblue;
-    background-image: url('/img/Ajax-loader.gif');
-    outline: 1px solid red;
-    height: 700px;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
 @media only screen and (min-width: 1024px) {
     nav {
         position: relative;
@@ -481,6 +468,11 @@ footer {
     .navigation li {
         margin-bottom: 0;
     }
+
+    .navigation li:hover  .navigation-item-line {
+        background-color: white;
+        animation: loadNavigationLine ease-in-out forwards 0.5s;
+      }
 
     header {
         justify-content: flex-start;
