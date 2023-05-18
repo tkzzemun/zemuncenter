@@ -43,23 +43,20 @@ burger.addEventListener('click', () => {
 
 })
 
-//header logic 
-
-
+//header animation 
 window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header')
-    let scroll = window.scrollY;
-    if (scroll > 50) {
-      header.classList.add('scrolled')
-    }
-    else {
-      header.classList.remove('scrolled')
-    }
-  });
+  const header = document.querySelector('.header')
+  let scroll = window.scrollY;
+  if (scroll > 50) {
+    header.classList.add('scrolled')
+  }
+  else {
+    header.classList.remove('scrolled')
+  }
+});
 
 
 //animation on scroll
-
 
 
 if (document.querySelector('.reveal')) {
