@@ -340,6 +340,12 @@ footer {
   padding-bottom: 50px;
  }
 
+ .about-img img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+ }
+
 /*.about-background {
     height: 100vh;
 }*/
@@ -380,6 +386,12 @@ footer {
 
 .contact-box h2 {
     text-transform: uppercase;
+}
+
+.contact-img img {
+height: 350px;
+width: 100%;
+object-fit: cover;
 }
 
 .events {
@@ -619,7 +631,6 @@ height: 100vh;
 .about-img {
   width: 40%;
   height: auto;
-  background-color: aquamarine;
  }
 
  .about-img img {
