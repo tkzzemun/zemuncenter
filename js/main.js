@@ -55,16 +55,38 @@ window.addEventListener('scroll', function() {
   }
 });
 
-//screen height
-
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+//update the screen height
+//We get the viewport height and multiple it by 1% to get a value for a vh unit
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
+//button to top 
+
+let toTopButton = document.querySelector(".back-to-top-button");
+
+toTopButton.addEventListener("click", topFunction);
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
+  ) {
+    toTopButton.style.display = "block";
+  } else {
+    toTopButton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 //animation on scroll
-
-
 if (document.querySelector('.reveal')) {
     ScrollReveal().reveal('.reveal', {
       distance: '150px',
