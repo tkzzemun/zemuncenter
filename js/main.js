@@ -1,7 +1,7 @@
 
 /* code is here */
 
-/*import SmoothScroll from './smoothScroll.js'*/
+//import SmoothScroll from './smoothScroll.js'
 
 (function () {
 
@@ -63,8 +63,8 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 //button to top 
 
+if (document.body.id == 'Homepage') {
 let toTopButton = document.querySelector(".back-to-top-button");
-
 toTopButton.addEventListener("click", topFunction);
 window.onscroll = function () {
   scrollFunction();
@@ -84,6 +84,7 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 }
 
 //animation on scroll
