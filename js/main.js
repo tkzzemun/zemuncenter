@@ -2,13 +2,7 @@
 /* code is here */
 
 //import SmoothScroll from './smoothScroll.js'
-
 (function () {
-
-/*function init() {
-    new SmoothScroll({ target: document, speed: 40, smooth: 16 })
-  }*/
-
 //mobile menu logic
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 let TOGGLE_MENU = false;
@@ -18,30 +12,49 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const header = document.querySelector('.header');
 burger.addEventListener('click', () => {
   TOGGLE_MENU = !TOGGLE_MENU
+  console.log(TOGGLE_MENU )
+  console.log('clicked')
   if (TOGGLE_MENU) {
     mobileMenu.classList.remove('hidden');
     header.classList.add('open-burger')
     mobileMenu.classList.add('mobile-menu-height')
-    document.body.style.top = `-${window.scrollY}px`
+    /*document.body.style.top = `-${window.scrollY}px`
     document.body.style.right = `0px`
     document.body.style.left = `0px`
-    document.body.style.position = 'fixed'
+    //document.body.style.position = 'fixed'*/
   }
   if (!TOGGLE_MENU) {
     mobileMenu.classList.add('hidden');
     header.classList.remove('open-burger')
     mobileMenu.classList.remove('mobile-menu-height')
-    const scrollY = document.body.style.top
+    /*const scrollY = document.body.style.top
     document.body.style.position = ''
     document.body.style.top = ''
     document.body.style.right = ``
     document.body.style.left = ``
 
-    window.scrollTo({top: parseInt(scrollY || '0') * -1, behavior: 'instant' })
+   window.scrollTo({top: parseInt(scrollY || '0') * -1, behavior: 'instant' })*/
 
   }
 
 })
+
+let galleryLink = document.querySelector('.gallery-link');
+function closeMenu(){
+  setTimeout(
+    function(){
+    mobileMenu.classList.add('hidden');
+    header.classList.remove('open-burger')
+    mobileMenu.classList.remove('mobile-menu-height')
+    TOGGLE_MENU = false;
+    console.log('hello')
+    },
+    500
+  )
+}
+
+galleryLink.addEventListener('click', closeMenu)
+
 
 //header animation 
 window.addEventListener('scroll', function() {
@@ -265,5 +278,93 @@ if (document.querySelector('.reveal')) {
     }
   }
 
+  function init() {
+    new SmoothScroll({ target: document, speed: 40, smooth: 16 })
+  }
+
+  function SmoothScroll({target, speed, smooth}) {
+    if (target === document)
+      target = (document.scrollingElement ||
+        document.documentElement ||
+        document.body.parentNode ||
+        document.body)
+  
+    let moving = false
+    let pos = target.scrollTop
+    let frame = target === document.body &&
+      document.documentElement ?
+      document.documentElement :
+      target
+  
+    target.addEventListener('mousewheel', scrolled, {
+      passive: false
+    })
+    target.addEventListener('DOMMouseScroll', scrolled, {
+      passive: false
+    })
+  
+    function scrolled(e) {
+      e.preventDefault();
+      let delta = normalizeWheelDelta(e)
+  
+      pos += -delta * speed
+      pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight))
+  
+      if (!moving) update()
+    }
+  
+    function normalizeWheelDelta(e) {
+      if (e.detail) {
+        if (e.wheelDelta)
+          return e.wheelDelta / e.detail / 40 * (e.detail > 0 ? 1 : -1) // Opera
+        else
+          return -e.detail / 3 // Firefox
+      } else
+        return e.wheelDelta / 120 // IE,Safari,Chrome
+    }
+  
+    function update() {
+      moving = true
+      let delta = (pos - target.scrollTop) / smooth
+  
+      target.scrollTop += delta
+  
+      if (Math.abs(delta) > 0.5)
+        requestFrame(update)
+      else
+        moving = false
+    }
+  
+    let requestFrame = function () { // requestAnimationFrame cross browser
+      return (
+        window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (func) {
+          window.setTimeout(func, 1000 / 50);
+        }
+      );
+    }()
+  }
+
+  //
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+  //
+  /*window.onload = () => {
+    window.scrollTo(0, 0);
+  }*/
+
+  document.body.addEventListener('onload', init())
 })()
 
