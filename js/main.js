@@ -64,6 +64,8 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 //button to top 
 
 if (document.body.id == 'Homepage') {
+const header = document.querySelector('.header')
+header.style.backgroundColor = 'white'
 let toTopButton = document.querySelector(".back-to-top-button");
 toTopButton.addEventListener("click", topFunction);
 window.onscroll = function () {
