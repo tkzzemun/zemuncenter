@@ -18,28 +18,18 @@ burger.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden');
     header.classList.add('open-burger')
     mobileMenu.classList.add('mobile-menu-height')
-    /*document.body.style.top = `-${window.scrollY}px`
-    document.body.style.right = `0px`
-    document.body.style.left = `0px`
-    //document.body.style.position = 'fixed'*/
   }
   if (!TOGGLE_MENU) {
     mobileMenu.classList.add('hidden');
     header.classList.remove('open-burger')
     mobileMenu.classList.remove('mobile-menu-height')
-    /*const scrollY = document.body.style.top
-    document.body.style.position = ''
-    document.body.style.top = ''
-    document.body.style.right = ``
-    document.body.style.left = ``
-
-   window.scrollTo({top: parseInt(scrollY || '0') * -1, behavior: 'instant' })*/
-
   }
 
 })
+const gallery = document.getElementById('gallery')
+gallery.scrollIntoView({ behavior: 'smooth' })
 
-let galleryLink = document.querySelector('.gallery-link');
+const galleryLink = document.querySelector('.gallery-link');
 function closeMenu(){
   setTimeout(
     function(){
@@ -47,7 +37,6 @@ function closeMenu(){
     header.classList.remove('open-burger')
     mobileMenu.classList.remove('mobile-menu-height')
     TOGGLE_MENU = false;
-    console.log('hello')
     },
     500
   )
@@ -81,26 +70,32 @@ const header = document.querySelector('.header')
 header.style.backgroundColor = 'white'
 let toTopButton = document.querySelector(".back-to-top-button");
 toTopButton.addEventListener("click", topFunction);
+
+function topFunction() {
+  console.log('to top')
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+
 window.onscroll = function () {
   scrollFunction();
 };
 
 function scrollFunction() {
+  let scroll = window.scrollY;
   if (
-    document.body.scrollTop > 200 ||
-    document.documentElement.scrollTop > 200
+    scroll > 200 ||
+    document.documentElement.scrollTo > 200
   ) {
     toTopButton.style.display = "block";
   } else {
     toTopButton.style.display = "none";
   }
 }
+}
 
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-}
 
 //animation on scroll
 if (document.querySelector('.reveal')) {
@@ -349,7 +344,6 @@ if (document.querySelector('.reveal')) {
     }()
   }
 
-  //
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -359,12 +353,9 @@ if (document.querySelector('.reveal')) {
         });
     });
 });
-
-  //
-  /*window.onload = () => {
-    window.scrollTo(0, 0);
-  }*/
-
+window.onload = () => {
+  window.scrollTo(0, 0);
+}
   document.body.addEventListener('onload', init())
 })()
 
