@@ -332,7 +332,6 @@ if (document.querySelector('.reveal')) {
   
     let requestFrame = function () { // requestAnimationFrame cross browser
       return (
-        
         window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -341,6 +340,7 @@ if (document.querySelector('.reveal')) {
         function (func) {
           window.setTimeout(func, 1000 / 50);
         }
+        
       );
     }()
   }

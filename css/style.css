@@ -434,6 +434,7 @@ object-fit: cover;
     padding-right: 20px;
 }
 
+
 .back-to-top-button {
   display: none;
   position: fixed;
@@ -450,7 +451,6 @@ object-fit: cover;
   height: 55px;
   width: 55px;
   transform: rotateY(0deg) rotate(-90deg);
-  /*opacity: 80%;*/
   background-color: #878482;;
   border-radius: 50%;
   transition: all 1s;
