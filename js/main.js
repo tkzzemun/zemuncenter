@@ -273,7 +273,7 @@ if (document.querySelector('.reveal')) {
     }
   }
 
-  function init() {
+  /*function init() {
     new SmoothScroll({ target: document, speed: 40, smooth: 16 })
   }
 
@@ -352,7 +352,7 @@ if (document.querySelector('.reveal')) {
             behavior: 'smooth'
         });
     });
-});
+});*/
 window.onload = () => {
   window.scrollTo(0, 0);
 }

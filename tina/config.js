@@ -14,31 +14,38 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "/img",
       publicFolder: "./",
     },
   },
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
-        fields: [
+        name: "pages",
+        label: 'Pages',
+        path: '_pages',
+        format: 'md',
+        templates: [
           {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
-        ],
+            name: 'homepage',
+            label: 'Homepage',
+            fields: [
+              {
+                  type: 'string',
+                  name: 'layout',
+                  label: 'layout',
+                  ui: {
+                      component: () => null
+                  }
+              },
+              {
+                  type: 'string',
+                  name: 'title',
+                  label: 'Title'
+              }
+            ]
+          }
+        ]
       },
     ],
   },
