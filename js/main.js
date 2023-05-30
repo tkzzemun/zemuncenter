@@ -326,12 +326,13 @@ if (document.querySelector('.reveal')) {
   
       if (Math.abs(delta) > 0.5)
         requestFrame(update)
-      else
+      else     
         moving = false
     }
   
     let requestFrame = function () { // requestAnimationFrame cross browser
       return (
+        
         window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
