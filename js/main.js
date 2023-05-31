@@ -112,12 +112,14 @@ const rightArrow = document.querySelector('.right-arrow');
 
 let index = 0; // will track our current image;
 
+//only for desktop
+if(window.innerWidth >= 1024 ){
+  // load mobile script
 images.forEach((item, i) => {
     item.addEventListener('click', () => {
         //updateImage(i);
         updateImage(item)
         popup.classList.toggle('active');
-        console.log('close')
         if (popup.classList.contains("active")) {
           // Disable scroll
           document.body.style.overflow = "hidden";
@@ -133,17 +135,17 @@ images.forEach((item, i) => {
 closeBtn.addEventListener('click', () => {
   popup.classList.toggle('active');
   document.body.style.overflow = "auto";
- 
 })
 
 //const updateImage = (i) => {
   const updateImage = (item) => {
-  console.log('i', item.src)
     let path = item.src;
     largeImage.src = path;
     //imageName.innerHTML = path;
     /*imageIndex.innerHTML = `0${i+1}`;
     index = i;*/
+}
+}
 }
 
 
@@ -159,10 +161,6 @@ rightArrow.addEventListener('click', () => {
     }
 })*/
 
-
-
-
-}
 
 
 //animation on scroll
