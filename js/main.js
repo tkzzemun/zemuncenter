@@ -273,7 +273,7 @@ if (document.querySelector('.reveal')) {
     }
   }
 
-  function init() {
+  /*function init() {
     new SmoothScroll({ target: document, speed: 40, smooth: 16 })
   }
 
@@ -340,10 +340,10 @@ if (document.querySelector('.reveal')) {
         function (func) {
           window.setTimeout(func, 1000 / 50);
         }
-        
+
       );
     }()
-  }
+  }*/
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -355,9 +355,23 @@ if (document.querySelector('.reveal')) {
     });
 });
 
-window.onload = () => {
+/*window.onload = () => {
   window.scrollTo(0, 0);
-}
+}*/
+
+window.scroll({
+  top: 2500, 
+  left: 0, 
+  behavior: 'smooth'
+});
+
+// Scroll certain amounts from current position 
+window.scrollBy({ 
+  top: 0, // could be negative value
+  left: 0, 
+  behavior: 'smooth' 
+});
+
   document.body.addEventListener('onload', init())
 })()
 
