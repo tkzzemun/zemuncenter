@@ -26,8 +26,6 @@ burger.addEventListener('click', () => {
   }
 
 })
-const gallery = document.getElementById('gallery')
-gallery.scrollIntoView({ behavior: 'smooth' })
 
 const galleryLink = document.querySelector('.gallery-link');
 function closeMenu(){
@@ -64,11 +62,14 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 //button to top 
+const toTopButton = document.querySelector(".back-to-top-button");
 
 if (document.body.id == 'Homepage') {
+
+const gallery = document.getElementById('gallery')
+gallery.scrollIntoView({ behavior: 'smooth' })
 const header = document.querySelector('.header')
 header.style.backgroundColor = 'white'
-let toTopButton = document.querySelector(".back-to-top-button");
 toTopButton.addEventListener("click", topFunction);
 
 function topFunction() {
@@ -94,6 +95,73 @@ function scrollFunction() {
     toTopButton.style.display = "none";
   }
 }
+
+//gallery popup
+
+const images = [...document.querySelectorAll('.mItem img')];
+
+// popup
+
+const popup = document.querySelector('.popup');
+const closeBtn = document.querySelector('.close-btn');
+const imageName = document.querySelector('.image-name');
+const largeImage = document.querySelector('.large-image');
+const imageIndex = document.querySelector('.index');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+let index = 0; // will track our current image;
+
+images.forEach((item, i) => {
+    item.addEventListener('click', () => {
+        //updateImage(i);
+        updateImage(item)
+        popup.classList.toggle('active');
+        console.log('close')
+        if (popup.classList.contains("active")) {
+          // Disable scroll
+          document.body.style.overflow = "hidden";
+          toTopButton.style.display = "none";
+      } else {
+          // Enable scroll
+          document.body.style.overflow = "auto";
+          toTopButton.style.display = "block";
+      }
+    })
+})
+
+closeBtn.addEventListener('click', () => {
+  popup.classList.toggle('active');
+  document.body.style.overflow = "auto";
+ 
+})
+
+//const updateImage = (i) => {
+  const updateImage = (item) => {
+  console.log('i', item.src)
+    let path = item.src;
+    largeImage.src = path;
+    //imageName.innerHTML = path;
+    /*imageIndex.innerHTML = `0${i+1}`;
+    index = i;*/
+}
+
+
+/*leftArrow.addEventListener('click', () => {
+    if(index > 0){
+        updateImage(index - 1);
+    }
+})
+
+rightArrow.addEventListener('click', () => {
+    if(index < images.length - 1){
+        updateImage(index + 1);
+    }
+})*/
+
+
+
+
 }
 
 
@@ -345,7 +413,7 @@ if (document.querySelector('.reveal')) {
     }()
   }*/
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  /*document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -353,7 +421,7 @@ if (document.querySelector('.reveal')) {
             behavior: 'smooth'
         });
     });
-});
+});*/
 
 /*window.onload = () => {
   window.scrollTo(0, 0);
@@ -372,6 +440,9 @@ window.scrollBy({
   behavior: 'smooth' 
 });
 
-  document.body.addEventListener('onload', init())
+  //document.body.addEventListener('onload', init())
+
+  
+  //
 })()
 
