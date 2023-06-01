@@ -118,6 +118,7 @@ header img {
     justify-content: space-between;
     height: auto;
     padding: 30px;
+    text-align: start;
 }
 
 .nav-img {
@@ -132,6 +133,10 @@ header img {
     cursor: pointer;
     font-size: 25px;
     margin-bottom: 30px;
+}
+
+.mobile-menu {
+  text-align: center;
 }
 
 
@@ -541,7 +546,7 @@ object-fit: cover;
   cursor: pointer;
 }
 
-.left-arrow{
+.left-arrow {
   left: 10px;
 }
 
@@ -608,22 +613,36 @@ object-fit: cover;
     justify-content: space-between;
     height: 100%;
     width: 60%;
-    padding-top: 25%;
-    padding-bottom: 25%;
-    padding-left: 15%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    /*padding-left: 15%;*/
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+   
   }
 
-    .navigation li a {
-        margin-bottom: 0;
-        display: inline;
-    }
+  .navigation__box {
+    width: 50%;
+    text-align: left;
+    padding-left: 15%;
+    margin: 0 auto;
+    /*outline: 1px solid red;*/
+  }
 
-  .navigation-item-line {
+  .navigation__box li {
+    margin-top: 40px;
+  }
+
+  .navigation__box li:last-child  {
+    margin-top: 100px;
+  }
+
+  /*.navigation-item-line {
     height: 1px;
     background-color: transparent;
     margin-top: 5px;
-    /*display: inline;*/
-  }
+  }*/
   
   
   @keyframes  loadNavigationLine {
@@ -652,9 +671,6 @@ object-fit: cover;
       width: 180px;
   }
 
-      header .burger {
-        /*display: none;*/
-      }
 
       .navigation li {
         font-size: 24px;
@@ -809,8 +825,6 @@ height: 100vh;
 .about-img {
   width: 40%;
   height: auto;
-  /*padding-top: 200px;*/
-  /*background-color: #777;*/
  }
 
  .about-img img {
@@ -824,11 +838,6 @@ height: 100vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  /*width: 80%;
-  max-width: 1600px;
-  height: 90vh;
-  max-height: 800px;
-  border-radius: 20px;*/
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.55);
