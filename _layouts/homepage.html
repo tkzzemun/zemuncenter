@@ -1,32 +1,47 @@
 {% assign current_page = 'Homepage' %}
 {% include head.html %}
 {% include nav.html %}
-<div id="homepage">
+<div id="homepage" >
   <div class="video">
     <div class="video__main">
-      <img src="/img/9E1A5735-2-Edit.webp"/>
-    <iframe width="100%" height="100%"  id="background-video"
-    src="https://www.youtube.com/embed/Eg-Df5-aFpk?showinfo=0&controls=0&autoplay=1&mute=1&playsinline=1&playlist=Eg-Df5-aFpk&loop=1" title="YouTube video player" 
+      <img class="video__img" src="/img/9E1A5735-2-Edit.webp"/><!--iframe height="100%" -->
+    <iframe width="100%"  id="background-video"
+    src="https://www.youtube.com/embed/Eg-Df5-aFpk?modestbranding=1&controls=0&autoplay=1&mute=1&playsinline=1&playlist=Eg-Df5-aFpk&loop=1" title="YouTube video player" 
+  
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
     allowfullscreen></iframe>
     </div>
   </div>
-<!--<div class="video">
-    <div class="video__main">
-          <video id="background-video" autoplay muted loop poster="/img/9E1A5203.webp">
-<source src="/img/Gardos.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>     
-    </div>-->
-    <div class="video__text reveal">
-        <div class="container mx-auto lg:flex lg:justify-between lg:items-center">
-        <div>
-        <h2 class="main-title ">{{ page.title }}</h2>
-        <p>Као што је Харбург поред Хамбурга или Бадалона поред Барселоне, тако је и Земун поред Београда. Рекли бисмо – град у граду!</p>
-        </div>
-        <a href="/about" class="btn">Опширније</a>
+  <div class="video__button">
+    <svg id="Chevrons" class="video__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 55" class="img-svg">
+      <defs>
+        <filter id="f1" x="0" y="0" width="200%" height="200%">
+          <feOffset result="offOut" in="SourceGraphic" dx="1" dy="0.5" />
+          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+      </defs>
+      <path class="chevron" id='TopChevron' d="M52,4.2L28,23.7c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.3-0.1-0.5-0.2L3,4.2c-0.3-0.2-0.4-0.7-0.1-1
+C3,3,3.2,2.9,3.5,2.9H9c0.2,0,0.3,0.1,0.4,0.2l18,14.6L45.5,3c0.1-0.1,0.3-0.2,0.5-0.2h5.6c0.3,0,0.6,0.2,0.7,0.5
+C52.3,3.7,52.2,4,52,4.2z" />
+      <path class="chevron" id='MiddleChevron' d="M52,31.8L28,51.3c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.3-0.1-0.5-0.2L3,31.8c-0.3-0.2-0.4-0.7-0.1-1
+c0.1-0.2,0.3-0.3,0.6-0.3H9c0.2,0,0.3,0.1,0.4,0.2l18,14.6l18-14.6c0.1-0.1,0.3-0.2,0.5-0.2h5.6c0.3,0,0.6,0.2,0.7,0.5
+C52.3,31.3,52.2,31.6,52,31.8z" />
+      <path class="chevron" id='BottomChevron' d="M52,59.5L28,79c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.3-0.1-0.5-0.2L3,59.5c-0.3-0.2-0.4-0.7-0.1-1
+c0.1-0.2,0.3-0.3,0.6-0.3H9c0.2,0,0.3,0.1,0.4,0.2l18,14.6l18-14.6c0.1-0.1,0.3-0.2,0.5-0.2h5.6c0.3,0,0.6,0.2,0.7,0.5
+C52.3,59,52.2,59.3,52,59.5z" />
+    </svg>
+  </div>
+</div>
+<div class="main-content ">
+  <div class="video__text reveal">
+    <div class="container mx-auto lg:flex lg:justify-between lg:items-center">
+    <div>
+    <h2 class="main-title ">{{ page.title }}</h2>
+    <p>Као што је Харбург поред Хамбурга или Бадалона поред Барселоне, тако је и Земун поред Београда. Рекли бисмо – град у граду!</p>
     </div>
-    </div>
+    <a href="/about" class="btn">Опширније</a>
+</div>
 </div>
 <div class="events">
     <div class="container mx-auto">
@@ -201,5 +216,6 @@ Your browser does not support the video tag.
 
 </div>
 <button class="back-to-top-button"></button>
+</div>
 </div>
 {% include footer.html %}

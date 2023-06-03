@@ -22,8 +22,6 @@ body {
 header {
   color: #181818;
   background-color: white;
-  /*background-color: #FFF7ED;
-    background-color: #F6DCCC;*/
   background-color: #c4bcb5;
   background-color: #fff7ed;
   display: flex;
@@ -40,8 +38,6 @@ header {
 }
 
 header img {
-  /*filter: invert(100%);
-    filter: grayscale(1) invert(1);*/
   margin-right: 150px;
   position: relative;
   z-index: 1000;
@@ -57,12 +53,6 @@ header img {
 .logo-burger-container {
   background-color: transparent;
 }
-
-/*header .header-logo img{
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }*/
 
 header .burger .burger-line {
   height: 3px;
@@ -101,7 +91,6 @@ header.open-burger .burger .burger-line:nth-child(3) {
 }
 
 nav {
-  /*background-color: #181818;*/
   background-color: #fff7ed;
   position: absolute;
   top: 0;
@@ -114,7 +103,6 @@ nav {
 }
 
 .navigation {
-  /*background-color: white; */
   color: #181818;
   display: flex;
   flex-direction: column;
@@ -166,7 +154,7 @@ nav {
   overflow-y: hidden;
   overflow: hidden;
   height: 86vh;
-  height: calc(var(--vh, 1vh) * 86);
+  height: calc(var(--vh, 1vh) * 88);
   pointer-events: none;
 }
 
@@ -175,10 +163,18 @@ nav {
   pointer-events: none;
 }
 
-.video-main img {
+.video__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video__button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
 }
 
 .video__text {
@@ -188,20 +184,101 @@ nav {
   padding-right: 20px;
   padding-top: 35px;
   padding-bottom: 35px;
-  position: relative;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
 }
 
-#background-video {
+.video__svg {
+  height: 80px;
+  max-width: 30px;
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 20px);
+  cursor: pointer;
+}
+
+.chevron {
+  fill: #fff;
+  fill-opacity: 1;
+  position: relative;
+  z-index: 10000;
+}
+
+#TopChevron {
+  animation: topChevron 2s infinite;
+}
+
+#MiddleChevron {
+  animation: middleChevron 2s infinite;
+}
+
+#BottomChevron {
+  animation: bottomChevron 2s infinite;
+}
+
+@keyframes topChevron {
+  0% {
+    fill-opacity: 0;
+  }
+  5% {
+    fill-opacity: 1;
+  }
+  70% {
+    fill-opacity: 1;
+  }
+  75% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 0;
+  }
+}
+
+@keyframes middleChevron {
+  0% {
+    fill-opacity: 0;
+  }
+  5% {
+    fill-opacity: 0;
+  }
+  10% {
+    fill-opacity: 1;
+  }
+  75% {
+    fill-opacity: 1;
+  }
+  80% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 0;
+  }
+}
+
+@keyframes bottomChevron {
+  0% {
+    fill-opacity: 0;
+  }
+  10% {
+    fill-opacity: 0;
+  }
+  15% {
+    fill-opacity: 1;
+  }
+  80% {
+    fill-opacity: 1;
+  }
+  85% {
+    fill-opacity: 0;
+  }
+}
+
+.video__main iframe {
   width: 100vw;
-  height: 100%;
+  /*height: 100%;*/
   overflow: auto;
   object-fit: cover;
   left: 0;
@@ -220,15 +297,6 @@ nav {
   font-size: 18px;
   margin-bottom: 20px;
 }
-
-/* background-color: #c4bcb5;
-  border-radius: 50%;
-  transition: all 1s;
-}
-
-.back-to-top-button:hover {
-  background-color: #878482;
-}*/
 
 .video__text .btn {
   font-size: 18px;
@@ -294,7 +362,6 @@ footer {
 }
 
 .footer-box .logo img {
-  /*filter: grayscale(1) invert(1);*/
   margin-right: 150px;
   height: 84px;
 }
@@ -335,7 +402,6 @@ footer {
 }
 
 .official-item h2 {
-  /* border: 1px solid black;*/
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -362,7 +428,6 @@ footer {
 }
 
 .contact-text {
-  /*opacity: 0.9;*/
   color: #181818;
 }
 
@@ -459,11 +524,6 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  /*width: 80%;
-  max-width: 1600px;
-  height: 90vh;
-  max-height: 800px;
-  border-radius: 20px;*/
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -477,11 +537,6 @@ footer {
 }
 
 /*gallery popup*/
-
-/*.popup.active {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}*/
 
 .popup.active .close-btn,
 .popup.active .index,
@@ -600,7 +655,6 @@ footer {
     width: 60%;
     padding-top: 10%;
     padding-bottom: 10%;
-    /*padding-left: 15%;*/
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -611,7 +665,6 @@ footer {
     text-align: left;
     padding-left: 15%;
     margin: 0 auto;
-    /*outline: 1px solid red;*/
   }
 
   .navigation__box li {
@@ -621,12 +674,6 @@ footer {
   .navigation__box li:last-child {
     margin-top: 100px;
   }
-
-  /*.navigation-item-line {
-    height: 1px;
-    background-color: transparent;
-    margin-top: 5px;
-  }*/
 
   @keyframes loadNavigationLine {
     0% {
@@ -639,11 +686,6 @@ footer {
       width: 100%;
     }
   }
-
-  /*.navigation li:hover  .navigation-item-line {
-        background-color:#181818;
-        animation: loadNavigationLine ease-in-out forwards 0.5s;
-      }*/
 
   header {
     justify-content: flex-between;
@@ -832,8 +874,25 @@ footer {
 }
 
 @media only screen and (min-width: 1200px) {
+  .video__main {
+    animation-duration: 6s;
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
   .video__main iframe {
     display: block;
+    height: 110vh;
+  }
+
+  .video__button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    background-color: transparent;
   }
 
   .video__main img {

@@ -92,13 +92,7 @@
 
     const popup = document.querySelector(".popup");
     const closeBtn = document.querySelector(".close-btn");
-    const imageName = document.querySelector(".image-name");
     const largeImage = document.querySelector(".large-image");
-    const imageIndex = document.querySelector(".index");
-    const leftArrow = document.querySelector(".left-arrow");
-    const rightArrow = document.querySelector(".right-arrow");
-
-    let index = 0; // will track our current image;
 
     //only for desktop
     if (window.innerWidth >= 1024) {
@@ -129,24 +123,24 @@
       const updateImage = (item) => {
         let path = item.src;
         largeImage.src = path;
-        //imageName.innerHTML = path;
-        /*imageIndex.innerHTML = `0${i+1}`;
-    index = i;*/
       };
     }
+
+    //Chevron on scroll logic
+
+    let downButton = document.getElementById("Chevrons");
+    let mainContent = document.querySelector(".main-content");
+
+    if (downButton) {
+      downButton.addEventListener("click", scrollDownScreen);
+    }
+
+    function scrollDownScreen() {
+      mainContent.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   }
-
-  /*leftArrow.addEventListener('click', () => {
-    if(index > 0){
-        updateImage(index - 1);
-    }
-})
-
-rightArrow.addEventListener('click', () => {
-    if(index < images.length - 1){
-        updateImage(index + 1);
-    }
-})*/
 
   //animation on scroll
   if (document.querySelector(".reveal")) {
