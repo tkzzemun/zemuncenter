@@ -684,8 +684,8 @@ footer {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20000;
     background-color: transparent;
+    z-index: 20000;
   }
 
   header img {
