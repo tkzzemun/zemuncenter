@@ -10,7 +10,6 @@ export const PagesPartsFragmentDoc = gql`
     ... on PagesHomepage {
       layout
       title
-      about
     }
   }
 `;
