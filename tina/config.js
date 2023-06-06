@@ -43,11 +43,11 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
               },
-              {
+              /* {
                 type: "string",
                 name: "about",
                 label: "about",
-              },
+              },*/
             ],
           },
         ],
