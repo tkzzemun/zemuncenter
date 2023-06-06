@@ -721,8 +721,8 @@ footer {
     flex-direction: row;
     justify-content: flex-start;
     padding-top: 70px;
-    padding-bottom: 70px;
     align-items: end;
+    padding-bottom: 70px;
   }
 
   .footer-box__item {
