@@ -84,7 +84,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | Folder
+union DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | PagesContact | Folder
 
 type PagesHomepage implements Node & Document {
   layout: String
@@ -113,7 +113,16 @@ type PagesOfficial implements Node & Document {
   _values: JSON!
 }
 
-union Pages = PagesHomepage | PagesAbout | PagesOfficial
+type PagesContact implements Node & Document {
+  layout: String
+  title: String
+  text: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+union Pages = PagesHomepage | PagesAbout | PagesOfficial | PagesContact
 
 input StringFilter {
   startsWith: String
@@ -140,10 +149,17 @@ input PagesOfficialFilter {
   text: StringFilter
 }
 
+input PagesContactFilter {
+  layout: StringFilter
+  title: StringFilter
+  text: StringFilter
+}
+
 input PagesFilter {
   homepage: PagesHomepageFilter
   about: PagesAboutFilter
   official: PagesOfficialFilter
+  contact: PagesContactFilter
 }
 
 type PagesConnectionEdges {
@@ -193,10 +209,17 @@ input PagesOfficialMutation {
   text: String
 }
 
+input PagesContactMutation {
+  layout: String
+  title: String
+  text: String
+}
+
 input PagesMutation {
   homepage: PagesHomepageMutation
   about: PagesAboutMutation
   official: PagesOfficialMutation
+  contact: PagesContactMutation
 }
 
 schema {

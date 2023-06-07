@@ -98,7 +98,7 @@ export default defineConfig({
               },
             ],
           },
-          /*{
+          {
             name: "contact",
             label: "Contact",
             fields: [
@@ -115,13 +115,13 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
               },
-              {
+              /*{
                 type: "string",
                 label: "text",
                 name: "text",
-              },
+              },*/
             ],
-          },*/
+          },
         ],
       },
     ],
