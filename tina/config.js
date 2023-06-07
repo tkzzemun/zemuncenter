@@ -98,6 +98,30 @@ export default defineConfig({
               },
             ],
           },
+          {
+            name: "contact",
+            label: "Contact",
+            fields: [
+              {
+                type: "string",
+                name: "layout",
+                label: "layout",
+                ui: {
+                  component: () => null,
+                },
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Title",
+              },
+              {
+                type: "rich-text",
+                label: "text",
+                name: "text",
+              },
+            ],
+          },
         ],
       },
     ],

@@ -160,7 +160,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']>;
 };
 
-export type DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | Folder;
+export type DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | PagesContact | Folder;
 
 export type PagesHomepage = Node & Document & {
   __typename?: 'PagesHomepage';
@@ -192,7 +192,17 @@ export type PagesOfficial = Node & Document & {
   _values: Scalars['JSON'];
 };
 
-export type Pages = PagesHomepage | PagesAbout | PagesOfficial;
+export type PagesContact = Node & Document & {
+  __typename?: 'PagesContact';
+  layout?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON'];
+};
+
+export type Pages = PagesHomepage | PagesAbout | PagesOfficial | PagesContact;
 
 export type StringFilter = {
   startsWith?: InputMaybe<Scalars['String']>;
@@ -219,10 +229,24 @@ export type PagesOfficialFilter = {
   text?: InputMaybe<StringFilter>;
 };
 
+export type ImageFilter = {
+  startsWith?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type PagesContactFilter = {
+  layout?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  text?: InputMaybe<ImageFilter>;
+};
+
 export type PagesFilter = {
   homepage?: InputMaybe<PagesHomepageFilter>;
   about?: InputMaybe<PagesAboutFilter>;
   official?: InputMaybe<PagesOfficialFilter>;
+  contact?: InputMaybe<PagesContactFilter>;
 };
 
 export type PagesConnectionEdges = {
@@ -314,10 +338,17 @@ export type PagesOfficialMutation = {
   text?: InputMaybe<Scalars['String']>;
 };
 
+export type PagesContactMutation = {
+  layout?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
+  text?: InputMaybe<Scalars['String']>;
+};
+
 export type PagesMutation = {
   homepage?: InputMaybe<PagesHomepageMutation>;
   about?: InputMaybe<PagesAboutMutation>;
   official?: InputMaybe<PagesOfficialMutation>;
+  contact?: InputMaybe<PagesContactMutation>;
 };
 
 type PagesParts_PagesHomepage_Fragment = { __typename?: 'PagesHomepage', layout?: string | null, title?: string | null, text?: string | null };
@@ -326,14 +357,16 @@ type PagesParts_PagesAbout_Fragment = { __typename?: 'PagesAbout', layout?: stri
 
 type PagesParts_PagesOfficial_Fragment = { __typename?: 'PagesOfficial', layout?: string | null, title?: string | null, text?: string | null };
 
-export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_PagesAbout_Fragment | PagesParts_PagesOfficial_Fragment;
+type PagesParts_PagesContact_Fragment = { __typename?: 'PagesContact', layout?: string | null, title?: string | null, text?: string | null };
+
+export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_PagesAbout_Fragment | PagesParts_PagesOfficial_Fragment | PagesParts_PagesContact_Fragment;
 
 export type PagesQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PagesQuery = { __typename?: 'Query', pages: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PagesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']>;
@@ -345,7 +378,7 @@ export type PagesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, text?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
@@ -360,6 +393,11 @@ export const PagesPartsFragmentDoc = gql`
     text
   }
   ... on PagesOfficial {
+    layout
+    title
+    text
+  }
+  ... on PagesContact {
     layout
     title
     text

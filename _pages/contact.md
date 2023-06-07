@@ -1,5 +1,6 @@
 ---
 layout: contact
-title: Contact
 permalink: /contact/
+title: Hello
+_template: contact
 ---

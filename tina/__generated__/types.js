@@ -22,6 +22,11 @@ export const PagesPartsFragmentDoc = gql`
     title
     text
   }
+  ... on PagesContact {
+    layout
+    title
+    text
+  }
 }
     `;
 export const PagesDocument = gql`

@@ -14,4 +14,9 @@ fragment PagesParts on Pages {
     title
     text
   }
+  ... on PagesContact {
+    layout
+    title
+    text
+  }
 }
