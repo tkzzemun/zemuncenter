@@ -115,11 +115,11 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
               },
-              /*{
+              {
                 type: "string",
                 label: "text",
                 name: "text",
-              },*/
+              },
             ],
           },
         ],
