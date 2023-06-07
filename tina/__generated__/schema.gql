@@ -149,17 +149,10 @@ input PagesOfficialFilter {
   text: StringFilter
 }
 
-input ImageFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
 input PagesContactFilter {
   layout: StringFilter
   title: StringFilter
-  text: ImageFilter
+  text: StringFilter
 }
 
 input PagesFilter {

@@ -229,17 +229,10 @@ export type PagesOfficialFilter = {
   text?: InputMaybe<StringFilter>;
 };
 
-export type ImageFilter = {
-  startsWith?: InputMaybe<Scalars['String']>;
-  eq?: InputMaybe<Scalars['String']>;
-  exists?: InputMaybe<Scalars['Boolean']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
 export type PagesContactFilter = {
   layout?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
-  text?: InputMaybe<ImageFilter>;
+  text?: InputMaybe<StringFilter>;
 };
 
 export type PagesFilter = {
