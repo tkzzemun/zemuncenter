@@ -17,6 +17,5 @@ fragment PagesParts on Pages {
   ... on PagesContact {
     layout
     title
-    text
   }
 }
