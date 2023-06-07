@@ -166,7 +166,7 @@ export type PagesHomepage = Node & Document & {
   __typename?: 'PagesHomepage';
   layout?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
-  about?: Maybe<Scalars['String']>;
+  main_img?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   _sys: SystemInfo;
   _values: Scalars['JSON'];
@@ -181,10 +181,17 @@ export type StringFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
+export type ImageFilter = {
+  startsWith?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
 export type PagesHomepageFilter = {
   layout?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
-  about?: InputMaybe<StringFilter>;
+  main_img?: InputMaybe<ImageFilter>;
 };
 
 export type PagesFilter = {
@@ -265,21 +272,21 @@ export type DocumentMutation = {
 export type PagesHomepageMutation = {
   layout?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
-  about?: InputMaybe<Scalars['String']>;
+  main_img?: InputMaybe<Scalars['String']>;
 };
 
 export type PagesMutation = {
   homepage?: InputMaybe<PagesHomepageMutation>;
 };
 
-export type PagesPartsFragment = { __typename?: 'PagesHomepage', layout?: string | null, title?: string | null, about?: string | null };
+export type PagesPartsFragment = { __typename?: 'PagesHomepage', layout?: string | null, title?: string | null, main_img?: string | null };
 
 export type PagesQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, about?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PagesQuery = { __typename?: 'Query', pages: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, main_img?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PagesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']>;
@@ -291,14 +298,14 @@ export type PagesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, about?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, main_img?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
   ... on PagesHomepage {
     layout
     title
-    about
+    main_img
   }
 }
     `;

@@ -43,10 +43,15 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
               },
-              {
+              /*{
                 type: "string",
                 name: "text",
                 label: "Text",
+              },*/
+              {
+                type: "image",
+                name: "main_img",
+                label: "main_img",
               },
             ],
           },

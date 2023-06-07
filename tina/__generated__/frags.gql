@@ -2,6 +2,6 @@ fragment PagesParts on Pages {
   ... on PagesHomepage {
     layout
     title
-    about
+    main_img
   }
 }
