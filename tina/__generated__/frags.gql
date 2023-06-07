@@ -4,4 +4,14 @@ fragment PagesParts on Pages {
     title
     text
   }
+  ... on PagesAbout {
+    layout
+    title
+    text
+  }
+  ... on PagesOfficial {
+    layout
+    title
+    text
+  }
 }

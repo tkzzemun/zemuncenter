@@ -12,6 +12,16 @@ export const PagesPartsFragmentDoc = gql`
     title
     text
   }
+  ... on PagesAbout {
+    layout
+    title
+    text
+  }
+  ... on PagesOfficial {
+    layout
+    title
+    text
+  }
 }
     `;
 export const PagesDocument = gql`

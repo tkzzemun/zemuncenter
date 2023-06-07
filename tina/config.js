@@ -50,6 +50,54 @@ export default defineConfig({
               },
             ],
           },
+          {
+            name: "about",
+            label: "About",
+            fields: [
+              {
+                type: "string",
+                name: "layout",
+                label: "layout",
+                ui: {
+                  component: () => null,
+                },
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Title",
+              },
+              {
+                type: "string",
+                label: "text",
+                name: "text",
+              },
+            ],
+          },
+          {
+            name: "official",
+            label: "Official",
+            fields: [
+              {
+                type: "string",
+                name: "layout",
+                label: "layout",
+                ui: {
+                  component: () => null,
+                },
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Title",
+              },
+              {
+                type: "string",
+                label: "text",
+                name: "text",
+              },
+            ],
+          },
         ],
       },
     ],

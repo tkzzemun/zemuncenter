@@ -84,7 +84,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = PagesHomepage | Folder
+union DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | Folder
 
 type PagesHomepage implements Node & Document {
   layout: String
@@ -95,7 +95,25 @@ type PagesHomepage implements Node & Document {
   _values: JSON!
 }
 
-union Pages = PagesHomepage
+type PagesAbout implements Node & Document {
+  layout: String
+  title: String
+  text: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+type PagesOfficial implements Node & Document {
+  layout: String
+  title: String
+  text: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+union Pages = PagesHomepage | PagesAbout | PagesOfficial
 
 input StringFilter {
   startsWith: String
@@ -110,8 +128,22 @@ input PagesHomepageFilter {
   text: StringFilter
 }
 
+input PagesAboutFilter {
+  layout: StringFilter
+  title: StringFilter
+  text: StringFilter
+}
+
+input PagesOfficialFilter {
+  layout: StringFilter
+  title: StringFilter
+  text: StringFilter
+}
+
 input PagesFilter {
   homepage: PagesHomepageFilter
+  about: PagesAboutFilter
+  official: PagesOfficialFilter
 }
 
 type PagesConnectionEdges {
@@ -149,8 +181,22 @@ input PagesHomepageMutation {
   text: String
 }
 
+input PagesAboutMutation {
+  layout: String
+  title: String
+  text: String
+}
+
+input PagesOfficialMutation {
+  layout: String
+  title: String
+  text: String
+}
+
 input PagesMutation {
   homepage: PagesHomepageMutation
+  about: PagesAboutMutation
+  official: PagesOfficialMutation
 }
 
 schema {

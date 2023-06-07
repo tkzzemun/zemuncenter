@@ -1,5 +1,9 @@
 ---
 layout: about
-title: About
 permalink: /about/
+title: Граду у граду!
+text: текст2
+_template: about
 ---
+
+
