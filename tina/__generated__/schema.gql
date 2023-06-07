@@ -89,6 +89,7 @@ union DocumentNode = PagesHomepage | Folder
 type PagesHomepage implements Node & Document {
   layout: String
   title: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -103,9 +104,16 @@ input StringFilter {
   in: [String]
 }
 
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
 input PagesHomepageFilter {
   layout: StringFilter
   title: StringFilter
+  body: RichTextFilter
 }
 
 input PagesFilter {
@@ -144,6 +152,7 @@ input DocumentMutation {
 input PagesHomepageMutation {
   layout: String
   title: String
+  body: JSON
 }
 
 input PagesMutation {

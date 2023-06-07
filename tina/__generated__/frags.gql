@@ -2,5 +2,6 @@ fragment PagesParts on Pages {
   ... on PagesHomepage {
     layout
     title
+    body
   }
 }

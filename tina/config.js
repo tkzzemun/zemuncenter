@@ -43,12 +43,12 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
               },
-              /*{
+              {
                 type: "rich-text",
                 name: "body",
                 label: "Body",
                 isBody: true,
-              },*/
+              },
             ],
           },
         ],
