@@ -2,7 +2,8 @@
 layout: contact
 permalink: /contact/
 title: Hello
-text: ffff
+text: text contact
 _template: contact
 ---
+
 
