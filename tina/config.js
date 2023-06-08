@@ -91,6 +91,17 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
               },
+              /*{
+                type: "object",
+                name: "nabavka",
+                label: "nabavka",
+                list: true,
+                ui: {
+                  itemProps: (item) => {
+                    return { label: `${item?.title} ` };
+                  },
+                },
+              },*/
             ],
           },
           {
