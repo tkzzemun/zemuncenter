@@ -68,7 +68,7 @@ export default defineConfig({
                 label: "Title",
               },
               {
-                type: "rich-text",
+                type: "string",
                 label: "text",
                 name: "text",
               },
@@ -92,9 +92,9 @@ export default defineConfig({
                 label: "Title",
               },
               {
-                type: "string",
-                label: "text",
-                name: "text",
+                type: "rich-text",
+                label: "about_text",
+                name: "about_text",
               },
             ],
           },

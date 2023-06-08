@@ -20,7 +20,7 @@ export const PagesPartsFragmentDoc = gql`
   ... on PagesOfficial {
     layout
     title
-    text
+    about_text
   }
   ... on PagesContact {
     layout

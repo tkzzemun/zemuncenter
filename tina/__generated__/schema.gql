@@ -107,7 +107,7 @@ type PagesAbout implements Node & Document {
 type PagesOfficial implements Node & Document {
   layout: String
   title: String
-  text: String
+  about_text: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -143,10 +143,16 @@ input PagesAboutFilter {
   text: StringFilter
 }
 
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
 input PagesOfficialFilter {
   layout: StringFilter
   title: StringFilter
-  text: StringFilter
+  about_text: RichTextFilter
 }
 
 input PagesContactFilter {
@@ -206,7 +212,7 @@ input PagesAboutMutation {
 input PagesOfficialMutation {
   layout: String
   title: String
-  text: String
+  about_text: JSON
 }
 
 input PagesContactMutation {
