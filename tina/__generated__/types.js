@@ -34,7 +34,12 @@ export const PagesPartsFragmentDoc = gql`
   ... on PagesContact {
     layout
     title
-    text
+    image
+    adress
+    Phone
+    email
+    working
+    weekend
   }
 }
     `;

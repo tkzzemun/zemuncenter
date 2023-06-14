@@ -171,9 +171,34 @@ export default defineConfig({
                 label: "Title",
               },
               {
+                type: "image",
+                name: "image",
+                label: "Image",
+              },
+              {
                 type: "string",
-                label: "text",
-                name: "text",
+                label: "Adress",
+                name: "adress",
+              },
+              {
+                type: "string",
+                label: "Phone",
+                name: "Phone",
+              },
+              {
+                type: "string",
+                label: "Email",
+                name: "email",
+              },
+              {
+                type: "string",
+                label: "Working days",
+                name: "working",
+              },
+              {
+                type: "string",
+                label: "Weekend",
+                name: "weekend",
               },
             ],
           },

@@ -26,6 +26,11 @@ fragment PagesParts on Pages {
   ... on PagesContact {
     layout
     title
-    text
+    image
+    adress
+    Phone
+    email
+    working
+    weekend
   }
 }
