@@ -3,6 +3,13 @@ fragment PagesParts on Pages {
     layout
     title
     text
+    event {
+      __typename
+      date
+      title
+      text
+      image
+    }
   }
   ... on PagesAbout {
     layout
@@ -32,6 +39,6 @@ fragment PagesParts on Pages {
     Phone
     email
     working
-    weekend
+    weekends
   }
 }

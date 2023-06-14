@@ -11,6 +11,13 @@ export const PagesPartsFragmentDoc = gql`
     layout
     title
     text
+    event {
+      __typename
+      date
+      title
+      text
+      image
+    }
   }
   ... on PagesAbout {
     layout
@@ -40,7 +47,7 @@ export const PagesPartsFragmentDoc = gql`
     Phone
     email
     working
-    weekend
+    weekends
   }
 }
     `;

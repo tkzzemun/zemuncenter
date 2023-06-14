@@ -44,9 +44,50 @@ export default defineConfig({
                 label: "Title",
               },
               {
-                type: "string",
+                type: "rich-text",
                 name: "text",
                 label: "Text",
+              },
+              {
+                type: "object",
+                name: "event",
+                label: "Event",
+                list: true,
+                ui: {
+                  itemProps: (item) => {
+                    return {
+                      label: `${item?.date} ( ${item?.title} ) ( ${item?.text} ) ( ${item?.image} )`,
+                    };
+                  },
+                  defaultItem: {
+                    date: "Date",
+                    title: "Title",
+                    text: "Text",
+                    image: "",
+                  },
+                },
+                fields: [
+                  {
+                    label: "Date",
+                    name: "date",
+                    type: "string",
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    type: "string",
+                  },
+                  {
+                    label: "Text",
+                    name: "text",
+                    type: "string",
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    type: "image",
+                  },
+                ],
               },
             ],
           },
@@ -74,7 +115,7 @@ export default defineConfig({
               },
               {
                 type: "rich-text",
-                label: "about_text",
+                label: "Text",
                 name: "about_text",
               },
             ],
@@ -100,7 +141,7 @@ export default defineConfig({
               {
                 type: "object",
                 name: "nabavka",
-                label: "nabavka",
+                label: "Nabavka",
                 list: true,
                 ui: {
                   itemProps: (item) => {
@@ -202,8 +243,8 @@ export default defineConfig({
               },
               {
                 type: "string",
-                label: "Weekend",
-                name: "weekend",
+                label: "Weekends",
+                name: "weekends",
               },
             ],
           },

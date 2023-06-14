@@ -86,10 +86,18 @@ type Collection {
 
 union DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | PagesContact | Folder
 
+type PagesHomepageEvent {
+  date: String
+  title: String
+  text: String
+  image: String
+}
+
 type PagesHomepage implements Node & Document {
   layout: String
   title: String
-  text: String
+  text: JSON
+  event: [PagesHomepageEvent]
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -133,7 +141,7 @@ type PagesContact implements Node & Document {
   Phone: String
   email: String
   working: String
-  weekend: String
+  weekends: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -148,10 +156,10 @@ input StringFilter {
   in: [String]
 }
 
-input PagesHomepageFilter {
-  layout: StringFilter
-  title: StringFilter
-  text: StringFilter
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
 }
 
 input ImageFilter {
@@ -161,10 +169,18 @@ input ImageFilter {
   in: [String]
 }
 
-input RichTextFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
+input PagesHomepageEventFilter {
+  date: StringFilter
+  title: StringFilter
+  text: StringFilter
+  image: ImageFilter
+}
+
+input PagesHomepageFilter {
+  layout: StringFilter
+  title: StringFilter
+  text: RichTextFilter
+  event: PagesHomepageEventFilter
 }
 
 input PagesAboutFilter {
@@ -199,7 +215,7 @@ input PagesContactFilter {
   Phone: StringFilter
   email: StringFilter
   working: StringFilter
-  weekend: StringFilter
+  weekends: StringFilter
 }
 
 input PagesFilter {
@@ -238,10 +254,18 @@ input DocumentMutation {
   pages: PagesMutation
 }
 
+input PagesHomepageEventMutation {
+  date: String
+  title: String
+  text: String
+  image: String
+}
+
 input PagesHomepageMutation {
   layout: String
   title: String
-  text: String
+  text: JSON
+  event: [PagesHomepageEventMutation]
 }
 
 input PagesAboutMutation {
@@ -276,7 +300,7 @@ input PagesContactMutation {
   Phone: String
   email: String
   working: String
-  weekend: String
+  weekends: String
 }
 
 input PagesMutation {
