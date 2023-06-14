@@ -104,9 +104,21 @@ type PagesAbout implements Node & Document {
   _values: JSON!
 }
 
+type PagesOfficialNabavkaDocument {
+  link: String
+  name: String
+}
+
+type PagesOfficialNabavka {
+  date: String
+  title: String
+  document: [PagesOfficialNabavkaDocument]
+}
+
 type PagesOfficial implements Node & Document {
   layout: String
   title: String
+  nabavka: [PagesOfficialNabavka]
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -148,9 +160,21 @@ input PagesAboutFilter {
   about_text: RichTextFilter
 }
 
+input PagesOfficialNabavkaDocumentFilter {
+  link: StringFilter
+  name: StringFilter
+}
+
+input PagesOfficialNabavkaFilter {
+  date: StringFilter
+  title: StringFilter
+  document: PagesOfficialNabavkaDocumentFilter
+}
+
 input PagesOfficialFilter {
   layout: StringFilter
   title: StringFilter
+  nabavka: PagesOfficialNabavkaFilter
 }
 
 input PagesContactFilter {
@@ -207,9 +231,21 @@ input PagesAboutMutation {
   about_text: JSON
 }
 
+input PagesOfficialNabavkaDocumentMutation {
+  link: String
+  name: String
+}
+
+input PagesOfficialNabavkaMutation {
+  date: String
+  title: String
+  document: [PagesOfficialNabavkaDocumentMutation]
+}
+
 input PagesOfficialMutation {
   layout: String
   title: String
+  nabavka: [PagesOfficialNabavkaMutation]
 }
 
 input PagesContactMutation {

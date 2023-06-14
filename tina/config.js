@@ -91,17 +91,66 @@ export default defineConfig({
                 name: "title",
                 label: "Title",
               },
-              /*{
+              //date/ title/ pdf-link
+              {
                 type: "object",
                 name: "nabavka",
                 label: "nabavka",
                 list: true,
                 ui: {
                   itemProps: (item) => {
-                    return { label: `${item?.title} ` };
+                    return {
+                      label: `${item?.date} ( ${item?.title} ) ( ${item?.pdf} )`,
+                    };
+                  },
+                  defaultItem: {
+                    title: "Title",
+                    date: "Date",
                   },
                 },
-              },*/
+                fields: [
+                  {
+                    label: "Date",
+                    name: "date",
+                    type: "string",
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    type: "string",
+                  },
+                  {
+                    label: "Document",
+                    name: "document",
+                    type: "object",
+                    list: true,
+                    ui: {
+                      itemProps: (el) => {
+                        return {
+                          label: `${el?.link} ( ${el?.name} )`,
+                        };
+                      },
+                      defaultItem: {
+                        link: "Document link",
+                        name: "Document title",
+                      },
+                    },
+                    fields: [
+                      {
+                        label: "Document link",
+                        name: "link",
+                        type: "string",
+                      },
+                      {
+                        label: "Document title",
+                        name: "name",
+                        type: "string",
+                      },
+                    ],
+                  },
+                  //},
+                ],
+              },
             ],
           },
           {

@@ -20,6 +20,16 @@ export const PagesPartsFragmentDoc = gql`
   ... on PagesOfficial {
     layout
     title
+    nabavka {
+      __typename
+      date
+      title
+      document {
+        __typename
+        link
+        name
+      }
+    }
   }
   ... on PagesContact {
     layout
