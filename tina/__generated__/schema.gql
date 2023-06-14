@@ -86,7 +86,7 @@ type Collection {
 
 union DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | PagesContact | Folder
 
-type PagesHomepageEvent {
+type PagesHomepageEvents {
   date: String
   title: String
   text: String
@@ -97,7 +97,7 @@ type PagesHomepage implements Node & Document {
   layout: String
   title: String
   text: JSON
-  event: [PagesHomepageEvent]
+  events: [PagesHomepageEvents]
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -169,7 +169,7 @@ input ImageFilter {
   in: [String]
 }
 
-input PagesHomepageEventFilter {
+input PagesHomepageEventsFilter {
   date: StringFilter
   title: StringFilter
   text: StringFilter
@@ -180,7 +180,7 @@ input PagesHomepageFilter {
   layout: StringFilter
   title: StringFilter
   text: RichTextFilter
-  event: PagesHomepageEventFilter
+  events: PagesHomepageEventsFilter
 }
 
 input PagesAboutFilter {
@@ -254,7 +254,7 @@ input DocumentMutation {
   pages: PagesMutation
 }
 
-input PagesHomepageEventMutation {
+input PagesHomepageEventsMutation {
   date: String
   title: String
   text: String
@@ -265,7 +265,7 @@ input PagesHomepageMutation {
   layout: String
   title: String
   text: JSON
-  event: [PagesHomepageEventMutation]
+  events: [PagesHomepageEventsMutation]
 }
 
 input PagesAboutMutation {

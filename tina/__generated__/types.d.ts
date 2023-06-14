@@ -162,8 +162,8 @@ export type CollectionDocumentsArgs = {
 
 export type DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | PagesContact | Folder;
 
-export type PagesHomepageEvent = {
-  __typename?: 'PagesHomepageEvent';
+export type PagesHomepageEvents = {
+  __typename?: 'PagesHomepageEvents';
   date?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
@@ -175,7 +175,7 @@ export type PagesHomepage = Node & Document & {
   layout?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['JSON']>;
-  event?: Maybe<Array<Maybe<PagesHomepageEvent>>>;
+  events?: Maybe<Array<Maybe<PagesHomepageEvents>>>;
   id: Scalars['ID'];
   _sys: SystemInfo;
   _values: Scalars['JSON'];
@@ -252,7 +252,7 @@ export type ImageFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
-export type PagesHomepageEventFilter = {
+export type PagesHomepageEventsFilter = {
   date?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   text?: InputMaybe<StringFilter>;
@@ -263,7 +263,7 @@ export type PagesHomepageFilter = {
   layout?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   text?: InputMaybe<RichTextFilter>;
-  event?: InputMaybe<PagesHomepageEventFilter>;
+  events?: InputMaybe<PagesHomepageEventsFilter>;
 };
 
 export type PagesAboutFilter = {
@@ -379,7 +379,7 @@ export type DocumentMutation = {
   pages?: InputMaybe<PagesMutation>;
 };
 
-export type PagesHomepageEventMutation = {
+export type PagesHomepageEventsMutation = {
   date?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
   text?: InputMaybe<Scalars['String']>;
@@ -390,7 +390,7 @@ export type PagesHomepageMutation = {
   layout?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
   text?: InputMaybe<Scalars['JSON']>;
-  event?: InputMaybe<Array<InputMaybe<PagesHomepageEventMutation>>>;
+  events?: InputMaybe<Array<InputMaybe<PagesHomepageEventsMutation>>>;
 };
 
 export type PagesAboutMutation = {
@@ -435,7 +435,7 @@ export type PagesMutation = {
   contact?: InputMaybe<PagesContactMutation>;
 };
 
-type PagesParts_PagesHomepage_Fragment = { __typename?: 'PagesHomepage', layout?: string | null, title?: string | null, text?: any | null, event?: Array<{ __typename: 'PagesHomepageEvent', date?: string | null, title?: string | null, text?: string | null, image?: string | null } | null> | null };
+type PagesParts_PagesHomepage_Fragment = { __typename?: 'PagesHomepage', layout?: string | null, title?: string | null, text?: any | null, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: string | null, image?: string | null } | null> | null };
 
 type PagesParts_PagesAbout_Fragment = { __typename?: 'PagesAbout', layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null };
 
@@ -450,7 +450,7 @@ export type PagesQueryVariables = Exact<{
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, event?: Array<{ __typename: 'PagesHomepageEvent', date?: string | null, title?: string | null, text?: string | null, image?: string | null } | null> | null } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, document?: Array<{ __typename: 'PagesOfficialNabavkaDocument', link?: string | null, name?: string | null } | null> | null } | null> | null } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, Phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PagesQuery = { __typename?: 'Query', pages: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: string | null, image?: string | null } | null> | null } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, document?: Array<{ __typename: 'PagesOfficialNabavkaDocument', link?: string | null, name?: string | null } | null> | null } | null> | null } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, Phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PagesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']>;
@@ -462,7 +462,7 @@ export type PagesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, event?: Array<{ __typename: 'PagesHomepageEvent', date?: string | null, title?: string | null, text?: string | null, image?: string | null } | null> | null } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, document?: Array<{ __typename: 'PagesOfficialNabavkaDocument', link?: string | null, name?: string | null } | null> | null } | null> | null } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, Phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: string | null, image?: string | null } | null> | null } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, document?: Array<{ __typename: 'PagesOfficialNabavkaDocument', link?: string | null, name?: string | null } | null> | null } | null> | null } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, Phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
@@ -470,7 +470,7 @@ export const PagesPartsFragmentDoc = gql`
     layout
     title
     text
-    event {
+    events {
       __typename
       date
       title

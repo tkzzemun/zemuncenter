@@ -3,7 +3,7 @@ fragment PagesParts on Pages {
     layout
     title
     text
-    event {
+    events {
       __typename
       date
       title

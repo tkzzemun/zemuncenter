@@ -11,7 +11,7 @@ export const PagesPartsFragmentDoc = gql`
     layout
     title
     text
-    event {
+    events {
       __typename
       date
       title

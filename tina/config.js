@@ -50,8 +50,8 @@ export default defineConfig({
               },
               {
                 type: "object",
-                name: "event",
-                label: "Event",
+                name: "events",
+                label: "Events",
                 list: true,
                 ui: {
                   itemProps: (item) => {

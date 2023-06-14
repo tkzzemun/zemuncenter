@@ -4,7 +4,7 @@
 <div id="homepage" >
   <div class="video">
     <div class="video__main">
-      <img class="video__img" src="/img/9E1A5735-2-Edit.webp"/><!--iframe height="100%" width="100%"  -->
+      <img class="video__img" src="/img/9E1A5735-2-Edit.webp"/>
     <iframe  id="background-video"
     src="https://www.youtube.com/embed/Eg-Df5-aFpk?modestbranding=1&controls=0&autoplay=1&mute=1&playsinline=1&playlist=Eg-Df5-aFpk&loop=1" title="YouTube video player" 
    
@@ -48,60 +48,23 @@ C52.3,59,52.2,59.3,52,59.5z" />
     <div class="container mx-auto">
     <h2 class="main-title ">Најаве догађаја</h2>
     <div class="container mx-auto main-content">
+      {% for event in page.events %}
         <div class="lg:flex justify-between items-center lg:pt-0 mb-12 lg:mb-20 event-item reveal">
           <div class="lg:w-1/2 event-img mb-4">
-            <img src="/img/9E1A7698.webp" class="img-radius">
+            <img src="{{event.image}}" class="img-radius">
           </div>
           <div class="pt-2 lg:pt-0 lg:w-1/2 event-text">
             <div class="">
               <div class="border-class mb-6">
-              <p class="">01/06/23</p>
-              <h3 class="lg:mb-2 lg:mt-2 small-title">Rock Opera</h3>
+              <p class="">{{event.date}}</p>
+              <h3 class="lg:mb-2 lg:mt-2 small-title">{{event.title}}</h3>
               </div>
-              <div class="mb-4 lg:mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <div class="mb-4 lg:mb-12">{{event.text}}</div>
             </div>
           </div>
         </div>
-        <div class="lg:flex justify-between items-center lg:pt-0 mb-12 lg:mb-20 event-item reveal">
-            <div class="lg:w-1/2 event-img  mb-4">
-              <img src="/img/1C4A6970.webp" class="img-radius">
-            </div>
-            <div class="pt-2 lg:pt-0 lg:w-1/2 event-text">
-              <div class="">
-                <div class="border-class mb-6">
-                    <p class="lg:pb-4">01/06/23</p>
-                    <h3 class="lg:mb-2 lg:mt-2 small-title">Rock Opera</h3>
-                </div>
-                <div class="mb-4 lg:mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                   sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              </div>
-            </div>
-          </div>
-          <div class="lg:flex justify-between items-center lg:pt-0 mb-12 lg:mb-20 event-item reveal">
-            <div class="lg:w-1/2 event-img mb-4">
-              <img src="/img/IMG_6046.webp"  class="img-radius">
-            </div>
-            <div class="pt-2 lg:pt-0 lg:w-1/2 event-text">
-              <div class="">
-                <div class="border-class mb-6">
-                    <p class="lg:pb-4">01/06/23</p>
-                    <h3 class="lg:mb-2 lg:mt-2 small-title">Rock Opera</h3>
-                </div>
-                <div class="mb-4 lg:mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                  velit esse cillum dolore eu fugiat nulla pariatur. 
-                  Excepteur sint occaecat cupidatat non proident,
-                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
+        {% endfor %}  
+        </div> 
     </div>
 </div>
     <div id="gallery">
