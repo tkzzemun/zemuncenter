@@ -98,6 +98,7 @@ type PagesHomepage implements Node & Document {
 type PagesAbout implements Node & Document {
   layout: String
   title: String
+  image: String
   about_text: JSON
   id: ID!
   _sys: SystemInfo!
@@ -153,6 +154,13 @@ input PagesHomepageFilter {
   text: StringFilter
 }
 
+input ImageFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
 input RichTextFilter {
   startsWith: String
   eq: String
@@ -162,6 +170,7 @@ input RichTextFilter {
 input PagesAboutFilter {
   layout: StringFilter
   title: StringFilter
+  image: ImageFilter
   about_text: RichTextFilter
 }
 
@@ -180,13 +189,6 @@ input PagesOfficialFilter {
   layout: StringFilter
   title: StringFilter
   nabavka: PagesOfficialNabavkaFilter
-}
-
-input ImageFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
 }
 
 input PagesContactFilter {
@@ -245,6 +247,7 @@ input PagesHomepageMutation {
 input PagesAboutMutation {
   layout: String
   title: String
+  image: String
   about_text: JSON
 }
 

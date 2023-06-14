@@ -7,6 +7,7 @@ fragment PagesParts on Pages {
   ... on PagesAbout {
     layout
     title
+    image
     about_text
   }
   ... on PagesOfficial {

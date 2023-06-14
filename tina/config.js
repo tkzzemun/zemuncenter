@@ -68,6 +68,11 @@ export default defineConfig({
                 label: "Title",
               },
               {
+                type: "image",
+                name: "image",
+                label: "Image",
+              },
+              {
                 type: "rich-text",
                 label: "about_text",
                 name: "about_text",

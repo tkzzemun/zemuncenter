@@ -15,6 +15,7 @@ export const PagesPartsFragmentDoc = gql`
   ... on PagesAbout {
     layout
     title
+    image
     about_text
   }
   ... on PagesOfficial {
