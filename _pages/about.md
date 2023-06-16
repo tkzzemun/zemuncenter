@@ -1,7 +1,7 @@
 ---
 layout: about
 permalink: /about/
-title: Граду у градy.
+title: Граду у градy
 text: текст2
 about_text: >
   Као што је Харбург поред Хамбурга или Бадалона поред Барселоне, тако је и
@@ -35,3 +35,4 @@ about_text: >
   потенцијалом.
 _template: about
 ---
+
