@@ -113,7 +113,7 @@ type PagesAbout implements Node & Document {
   _values: JSON!
 }
 
-type PagesOfficialNabavkaDocument {
+type PagesOfficialNabavkaDocuments {
   link: String
   name: String
 }
@@ -121,7 +121,7 @@ type PagesOfficialNabavkaDocument {
 type PagesOfficialNabavka {
   date: String
   title: String
-  document: [PagesOfficialNabavkaDocument]
+  documents: [PagesOfficialNabavkaDocuments]
 }
 
 type PagesOfficial implements Node & Document {
@@ -190,7 +190,7 @@ input PagesAboutFilter {
   about_text: RichTextFilter
 }
 
-input PagesOfficialNabavkaDocumentFilter {
+input PagesOfficialNabavkaDocumentsFilter {
   link: StringFilter
   name: StringFilter
 }
@@ -198,7 +198,7 @@ input PagesOfficialNabavkaDocumentFilter {
 input PagesOfficialNabavkaFilter {
   date: StringFilter
   title: StringFilter
-  document: PagesOfficialNabavkaDocumentFilter
+  documents: PagesOfficialNabavkaDocumentsFilter
 }
 
 input PagesOfficialFilter {
@@ -275,7 +275,7 @@ input PagesAboutMutation {
   about_text: JSON
 }
 
-input PagesOfficialNabavkaDocumentMutation {
+input PagesOfficialNabavkaDocumentsMutation {
   link: String
   name: String
 }
@@ -283,7 +283,7 @@ input PagesOfficialNabavkaDocumentMutation {
 input PagesOfficialNabavkaMutation {
   date: String
   title: String
-  document: [PagesOfficialNabavkaDocumentMutation]
+  documents: [PagesOfficialNabavkaDocumentsMutation]
 }
 
 input PagesOfficialMutation {

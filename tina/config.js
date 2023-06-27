@@ -166,8 +166,8 @@ export default defineConfig({
                     type: "string",
                   },
                   {
-                    label: "Document",
-                    name: "document",
+                    label: "Documents",
+                    name: "documents",
                     type: "object",
                     list: true,
                     ui: {

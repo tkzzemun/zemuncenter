@@ -32,7 +32,7 @@ export const PagesPartsFragmentDoc = gql`
       __typename
       date
       title
-      document {
+      documents {
         __typename
         link
         name

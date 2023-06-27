@@ -24,7 +24,7 @@ fragment PagesParts on Pages {
       __typename
       date
       title
-      document {
+      documents {
         __typename
         link
         name
