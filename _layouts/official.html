@@ -7,9 +7,10 @@ nav.html %}
     </h1>
     <div>
       <ul class="official-box">
+        {% for item in page.nabavka %}
         <li class="official-item">
           <div>
-            <p>27. јануар 2021.</p>
+            <p>{{item.date}}</p>
             <h2>Nabavka name</h2>
           </div>
           <a
@@ -19,7 +20,8 @@ nav.html %}
             поступака јавних набавки и праћења извршења уговора о набавкама</a
           >
         </li>
-        <li class="official-item">
+        {% endfor %}
+        <!--<li class="official-item">
           <div>
             <p>27. јануар 2021.</p>
             <h2>Број јавне набавке: ЈН MВ 2Д/20 Набавка горива</h2>
@@ -77,7 +79,7 @@ nav.html %}
           <a
             >Правилник о ближем уређењу праћења извршења уговора о набавкама!
           </a>
-        </li>
+        </li>-->
       </ul>
     </div>
   </div>
