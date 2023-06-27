@@ -13,12 +13,12 @@ nav.html %}
             <p>{{item.date}}</p>
             <h2>{{item.title}}</h2>
           </div>
-          <a
-            target="”_blank”"
-            href="http://www.tkczemun.rs/jndownload/INTERNIAKT_jan2021.pdf"
-            >Правилник о ближем уређењу поступка јавних набавки, спровођења
-            поступака јавних набавки и праћења извршења уговора о набавкама</a
+          {% for document in page.documents %}
+          <a target="”_blank”" href="{{document.link}}">
+            <!-- href="http://www.tkczemun.rs/jndownload/INTERNIAKT_jan2021.pdf"-->
+            <p>{{document.name}}</p></a
           >
+          {% endfor %}
         </li>
         {% endfor %}
         <!--<li class="official-item">
