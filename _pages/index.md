@@ -43,7 +43,7 @@ event:
       est laborum.
     image: /img/1C4A6970.webp
 events:
-  - date: 08/07/23
+  - date: 08/08/23
     title: Wine fest
     text: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -78,6 +78,7 @@ events:
     image: /img/9E1A5230.webp
 _template: homepage
 ---
+
 
 
 
