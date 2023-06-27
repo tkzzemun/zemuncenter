@@ -229,7 +229,7 @@ export default defineConfig({
               {
                 type: "string",
                 label: "Phone",
-                name: "Phone",
+                name: "phone",
               },
               {
                 type: "string",

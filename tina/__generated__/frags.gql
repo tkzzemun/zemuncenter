@@ -36,7 +36,7 @@ fragment PagesParts on Pages {
     title
     image
     adress
-    Phone
+    phone
     email
     working
     weekends

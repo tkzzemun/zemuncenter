@@ -138,7 +138,7 @@ type PagesContact implements Node & Document {
   title: String
   image: String
   adress: String
-  Phone: String
+  phone: String
   email: String
   working: String
   weekends: String
@@ -212,7 +212,7 @@ input PagesContactFilter {
   title: StringFilter
   image: ImageFilter
   adress: StringFilter
-  Phone: StringFilter
+  phone: StringFilter
   email: StringFilter
   working: StringFilter
   weekends: StringFilter
@@ -297,7 +297,7 @@ input PagesContactMutation {
   title: String
   image: String
   adress: String
-  Phone: String
+  phone: String
   email: String
   working: String
   weekends: String

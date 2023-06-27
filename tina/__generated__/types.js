@@ -44,7 +44,7 @@ export const PagesPartsFragmentDoc = gql`
     title
     image
     adress
-    Phone
+    phone
     email
     working
     weekends
