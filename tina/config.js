@@ -189,7 +189,7 @@ export default defineConfig({
                       },
                       {
                         label: "Document title",
-                        name: "name",
+                        name: "title",
                         type: "string",
                       },
                     ],

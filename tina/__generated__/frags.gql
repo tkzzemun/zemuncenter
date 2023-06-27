@@ -27,7 +27,7 @@ fragment PagesParts on Pages {
       documents {
         __typename
         link
-        name
+        title
       }
     }
   }
