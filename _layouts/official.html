@@ -13,10 +13,10 @@ nav.html %}
             <p>{{item.date}}</p>
             <h2>{{item.title}}</h2>
           </div>
-          {% for document in page.documents %}
-          <a target="”_blank”" href="{{document.link}}">
+          {% for item in nabavka.documents %}
+          <a target="”_blank”" href="{{item.link}}">
             <!-- href="http://www.tkczemun.rs/jndownload/INTERNIAKT_jan2021.pdf"-->
-            <p>{{document.title}}</p></a
+            <p>{{item.title}}</p></a
           >
           {% endfor %}
         </li>
