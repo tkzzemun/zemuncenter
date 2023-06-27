@@ -5,8 +5,8 @@ title: ' Jавнe набавке'
 about_text: |
   it's nabavka text bla bla bla
 nabavka:
-  - date: 23/12/23
-    title: Second Title
+  - date: 23/16/23
+    title: 'Jавна набавка '
     documents:
       - link: 'http://www.tkczemun.rs/jndownload/INTERNIAKT_jan2021.pdf'
         title: Конкурсна документација
@@ -14,6 +14,7 @@ nabavka:
         title: Конкурсна документација
 _template: official
 ---
+
 
 
 
