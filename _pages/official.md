@@ -7,11 +7,9 @@ about_text: |
 nabavka:
   - date: Date
     title: Title
-    document:
-      - link: Document link
-        name: Document title
 _template: official
 ---
+
 
 
 
