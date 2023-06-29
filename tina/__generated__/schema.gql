@@ -114,7 +114,7 @@ type PagesAbout implements Node & Document {
 }
 
 type PagesOfficialNabavkaDocuments {
-  link: String
+  pdf: String
   title: String
 }
 
@@ -191,7 +191,7 @@ input PagesAboutFilter {
 }
 
 input PagesOfficialNabavkaDocumentsFilter {
-  link: StringFilter
+  pdf: ImageFilter
   title: StringFilter
 }
 
@@ -276,7 +276,7 @@ input PagesAboutMutation {
 }
 
 input PagesOfficialNabavkaDocumentsMutation {
-  link: String
+  pdf: String
   title: String
 }
 

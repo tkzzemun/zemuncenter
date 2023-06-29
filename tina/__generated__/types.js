@@ -34,7 +34,7 @@ export const PagesPartsFragmentDoc = gql`
       title
       documents {
         __typename
-        link
+        pdf
         title
       }
     }

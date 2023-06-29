@@ -173,22 +173,22 @@ export default defineConfig({
                     ui: {
                       itemProps: (el) => {
                         return {
-                          label: `${el?.link} ( ${el?.name} )`,
+                          label: `${el?.pdf} ( ${el?.name} )`,
                         };
                       },
                       defaultItem: {
-                        link: "Document link",
-                        name: "Document title",
+                        pdf: "Pdf",
+                        name: "Pdf title",
                       },
                     },
                     fields: [
                       {
-                        label: "Document link",
-                        name: "link",
-                        type: "string",
+                        label: "Upload PDF",
+                        name: "pdf",
+                        type: "image",
                       },
                       {
-                        label: "Document title",
+                        label: "PDF title",
                         name: "title",
                         type: "string",
                       },

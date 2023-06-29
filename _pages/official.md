@@ -5,15 +5,18 @@ title: ' Jавнe набавке'
 about_text: |
   it's nabavka text bla bla bla
 nabavka:
-  - date: 23/16/23
-    title: 'Jавна набавка '
+  - date: 12/05/23
+    title: Nova nabavka goreva
     documents:
-      - link: 'http://www.tkczemun.rs/jndownload/INTERNIAKT_jan2021.pdf'
-        title: Конкурсна документација
-      - link: 'http://www.tkczemun.rs/jndownload/INTERNIAKT_jan2021.pdf'
+      - pdf: /img/ALC_Menu_A4_19.11.22.pdf
         title: Проектна документација
 _template: official
 ---
+
+
+
+
+
 
 
 
