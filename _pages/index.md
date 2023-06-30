@@ -56,9 +56,10 @@ events:
       29.08.2023.g. Karte se mogu kupiti na prodajnim mestima TICKETLINE i na
       biletarnici Letnje scene Gardoš, sat vremena pre početka predstave. Za
       dečije predstave ulaznice plaćaju samo pratioci.
-    image: ''
+    image: /img/WhatsApp Image 2023-06-30 at 23.06.12.jpeg
 _template: homepage
 ---
+
 
 
 
