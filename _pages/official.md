@@ -9,8 +9,10 @@ nabavka:
     title: Решење о именовању лица за информације од јавног значаја
     documents:
       - pdf: /img/Решење.pdf
+        title: Решење
 _template: official
 ---
+
 
 
 
