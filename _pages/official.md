@@ -8,9 +8,10 @@ nabavka:
   - date: 12/05/23
     title: Решење о именовању лица за информације од јавног значаја
     documents:
-      - pdf: /img/РЕШЕЊЕ.pdf
+      - pdf: /img/Решење.pdf
 _template: official
 ---
+
 
 
 
