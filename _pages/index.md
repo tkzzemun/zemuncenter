@@ -43,19 +43,8 @@ event:
       est laborum.
     image: /img/1C4A6970.webp
 events:
-  - date: 08/08/23
-    title: Wine fest
-    text: >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco                    laboris nisi
-      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-      sint occaecat cupidatat non proident,   sunt in culpa qui officia deserunt
-      mollit anim id est laborum
-    image: /img/1C4A4422.webp
-  - date: 2. Jul 2023
-    title: Leto na Gardošu
+  - date: 02-07-2023.
+    title: Лето на Гардошу
     text: >-
       Tradicionalna kulturna manifestacija Leto na Gardošu počinje u nedelju, 2.
       jula 2023, dečijom predstavom „Najlepša letnja avantura“. Pod
@@ -67,20 +56,10 @@ events:
       29.08.2023.g. Karte se mogu kupiti na prodajnim mestima TICKETLINE i na
       biletarnici Letnje scene Gardoš, sat vremena pre početka predstave. Za
       dečije predstave ulaznice plaćaju samo pratioci.
-    image: /img/1C4A6970.webp
-  - date: 01/09/23
-    title: Concert za skolarce
-    text: >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco                    laboris nisi
-      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-      sint occaecat cupidatat non proident,  sunt in culpa qui officia deserunt
-      mollit anim id est laborum
-    image: /img/9E1A5230.webp
+    image: ''
 _template: homepage
 ---
+
 
 
 
