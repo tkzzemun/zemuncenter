@@ -54,16 +54,19 @@ events:
       sint occaecat cupidatat non proident,   sunt in culpa qui officia deserunt
       mollit anim id est laborum
     image: /img/1C4A4422.webp
-  - date: 11/07/23
-    title: Predstava 011
+  - date: 2. Jul 2023
+    title: Leto na Gardošu
     text: >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco                    laboris nisi
-      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-      mollit anim id est laborum
+      Tradicionalna kulturna manifestacija Leto na Gardošu počinje u nedelju, 2.
+      jula 2023, dečijom predstavom „Najlepša letnja avantura“. Pod
+      pokroviteljstvom Gradske opštine Zemun, koja je osnivač ove manifestacije,
+      Turistička organizacija GO Zemun priredila je programe za sve generacije,
+      u svim izvođačkim žanrovima. Petkom i subotom su predstave i koncerti, a
+      nedeljom i ponedeljkom su sadržaji za najmladje. Ovu, tradicionalnu
+      Zemunsku manifestaciju ove godine čini 36 kulturnih sadržaja sve do
+      29.08.2023.g. Karte se mogu kupiti na prodajnim mestima TICKETLINE i na
+      biletarnici Letnje scene Gardoš, sat vremena pre početka predstave. Za
+      dečije predstave ulaznice plaćaju samo pratioci.
     image: /img/1C4A6970.webp
   - date: 01/09/23
     title: Concert za skolarce
@@ -78,6 +81,7 @@ events:
     image: /img/9E1A5230.webp
 _template: homepage
 ---
+
 
 
 
