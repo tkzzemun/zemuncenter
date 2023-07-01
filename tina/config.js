@@ -80,7 +80,7 @@ export default defineConfig({
                   {
                     label: "Text",
                     name: "text",
-                    type: "string",
+                    type: "rich-text",
                   },
                   {
                     label: "Image",

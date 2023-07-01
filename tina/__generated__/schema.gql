@@ -89,7 +89,7 @@ union DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | PagesContact |
 type PagesHomepageEvents {
   date: String
   title: String
-  text: String
+  text: JSON
   image: String
 }
 
@@ -172,7 +172,7 @@ input ImageFilter {
 input PagesHomepageEventsFilter {
   date: StringFilter
   title: StringFilter
-  text: StringFilter
+  text: RichTextFilter
   image: ImageFilter
 }
 
@@ -257,7 +257,7 @@ input DocumentMutation {
 input PagesHomepageEventsMutation {
   date: String
   title: String
-  text: String
+  text: JSON
   image: String
 }
 
