@@ -3,7 +3,7 @@ permalink: /about/
 text: текст2
 layout: about
 title: Граду у градy
-image: /img/pexels-mkan1vetsky-10269622.jpg
+image: /img/9E1A67701.jpg
 about_text: >
   Као што је Харбург поред Хамбурга или Бадалона поред Барселоне, тако је и
   Земун поред Београда. Рекли бисмо – град у граду! Земун се налази на десној
