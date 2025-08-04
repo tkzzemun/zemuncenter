@@ -55,7 +55,7 @@ events:
       манифестација траје све до 01.09.2025. Kaрте се могу купити нa продајним
       местима TICKETLINE и на билетарници Летње сцене Гардош, сат времена пре
       почетка представе. За дечије представе улазнице плаћају само пратиоци.
-    image: /img/ezgif.com-jpg-to-webp-converter.webp
+    image: /img/pexels-tara-winstead-8385737.jpg
 _template: homepage
 ---
 
