@@ -1,4 +1,5 @@
 fragment PagesParts on Pages {
+  __typename
   ... on PagesHomepage {
     layout
     title

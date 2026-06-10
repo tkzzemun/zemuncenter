@@ -12,69 +12,72 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
   /** References another document, used as a foreign key */
-  Reference: any;
-  JSON: any;
+  Reference: { input: any; output: any; }
+  JSON: { input: any; output: any; }
 };
 
 export type SystemInfo = {
   __typename?: 'SystemInfo';
-  filename: Scalars['String'];
-  title?: Maybe<Scalars['String']>;
-  basename: Scalars['String'];
-  breadcrumbs: Array<Scalars['String']>;
-  path: Scalars['String'];
-  relativePath: Scalars['String'];
-  extension: Scalars['String'];
-  template: Scalars['String'];
+  filename: Scalars['String']['output'];
+  title?: Maybe<Scalars['String']['output']>;
+  basename: Scalars['String']['output'];
+  hasReferences?: Maybe<Scalars['Boolean']['output']>;
+  breadcrumbs: Array<Scalars['String']['output']>;
+  path: Scalars['String']['output'];
+  relativePath: Scalars['String']['output'];
+  extension: Scalars['String']['output'];
+  template: Scalars['String']['output'];
   collection: Collection;
 };
 
 
 export type SystemInfoBreadcrumbsArgs = {
-  excludeExtension?: InputMaybe<Scalars['Boolean']>;
+  excludeExtension?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type Folder = {
   __typename?: 'Folder';
-  name: Scalars['String'];
-  path: Scalars['String'];
+  name: Scalars['String']['output'];
+  path: Scalars['String']['output'];
 };
 
 export type PageInfo = {
   __typename?: 'PageInfo';
-  hasPreviousPage: Scalars['Boolean'];
-  hasNextPage: Scalars['Boolean'];
-  startCursor: Scalars['String'];
-  endCursor: Scalars['String'];
+  hasPreviousPage: Scalars['Boolean']['output'];
+  hasNextPage: Scalars['Boolean']['output'];
+  startCursor: Scalars['String']['output'];
+  endCursor: Scalars['String']['output'];
 };
 
 export type Node = {
-  id: Scalars['ID'];
+  id: Scalars['ID']['output'];
 };
 
 export type Document = {
-  id: Scalars['ID'];
+  id: Scalars['ID']['output'];
   _sys?: Maybe<SystemInfo>;
-  _values: Scalars['JSON'];
+  _values: Scalars['JSON']['output'];
 };
 
 /** A relay-compliant pagination connection */
 export type Connection = {
-  totalCount: Scalars['Float'];
+  totalCount: Scalars['Float']['output'];
   pageInfo: PageInfo;
 };
 
 export type Query = {
   __typename?: 'Query';
-  getOptimizedQuery?: Maybe<Scalars['String']>;
+  getOptimizedQuery?: Maybe<Scalars['String']['output']>;
   collection: Collection;
   collections: Array<Collection>;
   node: Node;
@@ -85,37 +88,37 @@ export type Query = {
 
 
 export type QueryGetOptimizedQueryArgs = {
-  queryString: Scalars['String'];
+  queryString: Scalars['String']['input'];
 };
 
 
 export type QueryCollectionArgs = {
-  collection?: InputMaybe<Scalars['String']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
 };
 
 
 export type QueryNodeArgs = {
-  id?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['String']['input']>;
 };
 
 
 export type QueryDocumentArgs = {
-  collection?: InputMaybe<Scalars['String']>;
-  relativePath?: InputMaybe<Scalars['String']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 
 export type QueryPagesArgs = {
-  relativePath?: InputMaybe<Scalars['String']>;
+  relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 
 export type QueryPagesConnectionArgs = {
-  before?: InputMaybe<Scalars['String']>;
-  after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Float']>;
-  last?: InputMaybe<Scalars['Float']>;
-  sort?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<PagesFilter>;
 };
 
@@ -125,131 +128,131 @@ export type DocumentFilter = {
 
 export type DocumentConnectionEdges = {
   __typename?: 'DocumentConnectionEdges';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node?: Maybe<DocumentNode>;
 };
 
 export type DocumentConnection = Connection & {
   __typename?: 'DocumentConnection';
   pageInfo: PageInfo;
-  totalCount: Scalars['Float'];
+  totalCount: Scalars['Float']['output'];
   edges?: Maybe<Array<Maybe<DocumentConnectionEdges>>>;
 };
 
 export type Collection = {
   __typename?: 'Collection';
-  name: Scalars['String'];
-  slug: Scalars['String'];
-  label?: Maybe<Scalars['String']>;
-  path: Scalars['String'];
-  format?: Maybe<Scalars['String']>;
-  matches?: Maybe<Scalars['String']>;
-  templates?: Maybe<Array<Maybe<Scalars['JSON']>>>;
-  fields?: Maybe<Array<Maybe<Scalars['JSON']>>>;
+  name: Scalars['String']['output'];
+  slug: Scalars['String']['output'];
+  label?: Maybe<Scalars['String']['output']>;
+  path: Scalars['String']['output'];
+  format?: Maybe<Scalars['String']['output']>;
+  matches?: Maybe<Scalars['String']['output']>;
+  templates?: Maybe<Array<Maybe<Scalars['JSON']['output']>>>;
+  fields?: Maybe<Array<Maybe<Scalars['JSON']['output']>>>;
   documents: DocumentConnection;
 };
 
 
 export type CollectionDocumentsArgs = {
-  before?: InputMaybe<Scalars['String']>;
-  after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Float']>;
-  last?: InputMaybe<Scalars['Float']>;
-  sort?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<DocumentFilter>;
-  folder?: InputMaybe<Scalars['String']>;
+  folder?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentNode = PagesHomepage | PagesAbout | PagesOfficial | PagesContact | Folder;
 
 export type PagesHomepageEvents = {
   __typename?: 'PagesHomepageEvents';
-  date?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['JSON']>;
-  image?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  text?: Maybe<Scalars['JSON']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type PagesHomepage = Node & Document & {
   __typename?: 'PagesHomepage';
-  layout?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['JSON']>;
+  layout?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  text?: Maybe<Scalars['JSON']['output']>;
   events?: Maybe<Array<Maybe<PagesHomepageEvents>>>;
-  id: Scalars['ID'];
+  id: Scalars['ID']['output'];
   _sys: SystemInfo;
-  _values: Scalars['JSON'];
+  _values: Scalars['JSON']['output'];
 };
 
 export type PagesAbout = Node & Document & {
   __typename?: 'PagesAbout';
-  layout?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  image?: Maybe<Scalars['String']>;
-  about_text?: Maybe<Scalars['JSON']>;
-  id: Scalars['ID'];
+  layout?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  about_text?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
   _sys: SystemInfo;
-  _values: Scalars['JSON'];
+  _values: Scalars['JSON']['output'];
 };
 
 export type PagesOfficialNabavkaDocuments = {
   __typename?: 'PagesOfficialNabavkaDocuments';
-  pdf?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
+  pdf?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
 };
 
 export type PagesOfficialNabavka = {
   __typename?: 'PagesOfficialNabavka';
-  date?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
   documents?: Maybe<Array<Maybe<PagesOfficialNabavkaDocuments>>>;
 };
 
 export type PagesOfficial = Node & Document & {
   __typename?: 'PagesOfficial';
-  layout?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
+  layout?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
   nabavka?: Maybe<Array<Maybe<PagesOfficialNabavka>>>;
-  id: Scalars['ID'];
+  id: Scalars['ID']['output'];
   _sys: SystemInfo;
-  _values: Scalars['JSON'];
+  _values: Scalars['JSON']['output'];
 };
 
 export type PagesContact = Node & Document & {
   __typename?: 'PagesContact';
-  layout?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  image?: Maybe<Scalars['String']>;
-  adress?: Maybe<Scalars['String']>;
-  phone?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
-  working?: Maybe<Scalars['String']>;
-  weekends?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
+  layout?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  adress?: Maybe<Scalars['String']['output']>;
+  phone?: Maybe<Scalars['String']['output']>;
+  email?: Maybe<Scalars['String']['output']>;
+  working?: Maybe<Scalars['String']['output']>;
+  weekends?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
   _sys: SystemInfo;
-  _values: Scalars['JSON'];
+  _values: Scalars['JSON']['output'];
 };
 
 export type Pages = PagesHomepage | PagesAbout | PagesOfficial | PagesContact;
 
 export type StringFilter = {
-  startsWith?: InputMaybe<Scalars['String']>;
-  eq?: InputMaybe<Scalars['String']>;
-  exists?: InputMaybe<Scalars['Boolean']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type RichTextFilter = {
-  startsWith?: InputMaybe<Scalars['String']>;
-  eq?: InputMaybe<Scalars['String']>;
-  exists?: InputMaybe<Scalars['Boolean']>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type ImageFilter = {
-  startsWith?: InputMaybe<Scalars['String']>;
-  eq?: InputMaybe<Scalars['String']>;
-  exists?: InputMaybe<Scalars['Boolean']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type PagesHomepageEventsFilter = {
@@ -310,14 +313,14 @@ export type PagesFilter = {
 
 export type PagesConnectionEdges = {
   __typename?: 'PagesConnectionEdges';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node?: Maybe<Pages>;
 };
 
 export type PagesConnection = Connection & {
   __typename?: 'PagesConnection';
   pageInfo: PageInfo;
-  totalCount: Scalars['Float'];
+  totalCount: Scalars['Float']['output'];
   edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
 };
 
@@ -327,52 +330,59 @@ export type Mutation = {
   updateDocument: DocumentNode;
   deleteDocument: DocumentNode;
   createDocument: DocumentNode;
+  createFolder: DocumentNode;
   updatePages: Pages;
   createPages: Pages;
 };
 
 
 export type MutationAddPendingDocumentArgs = {
-  collection: Scalars['String'];
-  relativePath: Scalars['String'];
-  template?: InputMaybe<Scalars['String']>;
+  collection: Scalars['String']['input'];
+  relativePath: Scalars['String']['input'];
+  template?: InputMaybe<Scalars['String']['input']>;
 };
 
 
 export type MutationUpdateDocumentArgs = {
-  collection?: InputMaybe<Scalars['String']>;
-  relativePath: Scalars['String'];
+  collection?: InputMaybe<Scalars['String']['input']>;
+  relativePath: Scalars['String']['input'];
   params: DocumentUpdateMutation;
 };
 
 
 export type MutationDeleteDocumentArgs = {
-  collection?: InputMaybe<Scalars['String']>;
-  relativePath: Scalars['String'];
+  collection?: InputMaybe<Scalars['String']['input']>;
+  relativePath: Scalars['String']['input'];
 };
 
 
 export type MutationCreateDocumentArgs = {
-  collection?: InputMaybe<Scalars['String']>;
-  relativePath: Scalars['String'];
+  collection?: InputMaybe<Scalars['String']['input']>;
+  relativePath: Scalars['String']['input'];
   params: DocumentMutation;
 };
 
 
+export type MutationCreateFolderArgs = {
+  collection?: InputMaybe<Scalars['String']['input']>;
+  relativePath: Scalars['String']['input'];
+};
+
+
 export type MutationUpdatePagesArgs = {
-  relativePath: Scalars['String'];
+  relativePath: Scalars['String']['input'];
   params: PagesMutation;
 };
 
 
 export type MutationCreatePagesArgs = {
-  relativePath: Scalars['String'];
+  relativePath: Scalars['String']['input'];
   params: PagesMutation;
 };
 
 export type DocumentUpdateMutation = {
   pages?: InputMaybe<PagesMutation>;
-  relativePath?: InputMaybe<Scalars['String']>;
+  relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
@@ -380,52 +390,52 @@ export type DocumentMutation = {
 };
 
 export type PagesHomepageEventsMutation = {
-  date?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  text?: InputMaybe<Scalars['JSON']>;
-  image?: InputMaybe<Scalars['String']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['JSON']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PagesHomepageMutation = {
-  layout?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  text?: InputMaybe<Scalars['JSON']>;
+  layout?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['JSON']['input']>;
   events?: InputMaybe<Array<InputMaybe<PagesHomepageEventsMutation>>>;
 };
 
 export type PagesAboutMutation = {
-  layout?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  image?: InputMaybe<Scalars['String']>;
-  about_text?: InputMaybe<Scalars['JSON']>;
+  layout?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  about_text?: InputMaybe<Scalars['JSON']['input']>;
 };
 
 export type PagesOfficialNabavkaDocumentsMutation = {
-  pdf?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
+  pdf?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PagesOfficialNabavkaMutation = {
-  date?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
   documents?: InputMaybe<Array<InputMaybe<PagesOfficialNabavkaDocumentsMutation>>>;
 };
 
 export type PagesOfficialMutation = {
-  layout?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
+  layout?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
   nabavka?: InputMaybe<Array<InputMaybe<PagesOfficialNabavkaMutation>>>;
 };
 
 export type PagesContactMutation = {
-  layout?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  image?: InputMaybe<Scalars['String']>;
-  adress?: InputMaybe<Scalars['String']>;
-  phone?: InputMaybe<Scalars['String']>;
-  email?: InputMaybe<Scalars['String']>;
-  working?: InputMaybe<Scalars['String']>;
-  weekends?: InputMaybe<Scalars['String']>;
+  layout?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  adress?: InputMaybe<Scalars['String']['input']>;
+  phone?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  working?: InputMaybe<Scalars['String']['input']>;
+  weekends?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PagesMutation = {
@@ -435,37 +445,38 @@ export type PagesMutation = {
   contact?: InputMaybe<PagesContactMutation>;
 };
 
-type PagesParts_PagesHomepage_Fragment = { __typename?: 'PagesHomepage', layout?: string | null, title?: string | null, text?: any | null, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: any | null, image?: string | null } | null> | null };
+type PagesParts_PagesHomepage_Fragment = { __typename: 'PagesHomepage', layout?: string | null, title?: string | null, text?: any | null, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: any | null, image?: string | null } | null> | null };
 
-type PagesParts_PagesAbout_Fragment = { __typename?: 'PagesAbout', layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null };
+type PagesParts_PagesAbout_Fragment = { __typename: 'PagesAbout', layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null };
 
-type PagesParts_PagesOfficial_Fragment = { __typename?: 'PagesOfficial', layout?: string | null, title?: string | null, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, documents?: Array<{ __typename: 'PagesOfficialNabavkaDocuments', pdf?: string | null, title?: string | null } | null> | null } | null> | null };
+type PagesParts_PagesOfficial_Fragment = { __typename: 'PagesOfficial', layout?: string | null, title?: string | null, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, documents?: Array<{ __typename: 'PagesOfficialNabavkaDocuments', pdf?: string | null, title?: string | null } | null> | null } | null> | null };
 
-type PagesParts_PagesContact_Fragment = { __typename?: 'PagesContact', layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null };
+type PagesParts_PagesContact_Fragment = { __typename: 'PagesContact', layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null };
 
 export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_PagesAbout_Fragment | PagesParts_PagesOfficial_Fragment | PagesParts_PagesContact_Fragment;
 
 export type PagesQueryVariables = Exact<{
-  relativePath: Scalars['String'];
+  relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: any | null, image?: string | null } | null> | null } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, documents?: Array<{ __typename: 'PagesOfficialNabavkaDocuments', pdf?: string | null, title?: string | null } | null> | null } | null> | null } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PagesQuery = { __typename?: 'Query', pages: { __typename: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: any | null, image?: string | null } | null> | null } | { __typename: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, documents?: Array<{ __typename: 'PagesOfficialNabavkaDocuments', pdf?: string | null, title?: string | null } | null> | null } | null> | null } | { __typename: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PagesConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']>;
-  after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Float']>;
-  last?: InputMaybe<Scalars['Float']>;
-  sort?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<PagesFilter>;
 }>;
 
 
-export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename?: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: any | null, image?: string | null } | null> | null } | { __typename?: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename?: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, documents?: Array<{ __typename: 'PagesOfficialNabavkaDocuments', pdf?: string | null, title?: string | null } | null> | null } | null> | null } | { __typename?: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'PagesHomepage', id: string, layout?: string | null, title?: string | null, text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, events?: Array<{ __typename: 'PagesHomepageEvents', date?: string | null, title?: string | null, text?: any | null, image?: string | null } | null> | null } | { __typename: 'PagesAbout', id: string, layout?: string | null, title?: string | null, image?: string | null, about_text?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesOfficial', id: string, layout?: string | null, title?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, nabavka?: Array<{ __typename: 'PagesOfficialNabavka', date?: string | null, title?: string | null, documents?: Array<{ __typename: 'PagesOfficialNabavkaDocuments', pdf?: string | null, title?: string | null } | null> | null } | null> | null } | { __typename: 'PagesContact', id: string, layout?: string | null, title?: string | null, image?: string | null, adress?: string | null, phone?: string | null, email?: string | null, working?: string | null, weekends?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
+  __typename
   ... on PagesHomepage {
     layout
     title
@@ -517,6 +528,7 @@ export const PagesDocument = gql`
       _sys {
         filename
         basename
+        hasReferences
         breadcrumbs
         path
         relativePath
@@ -552,6 +564,7 @@ export const PagesConnectionDocument = gql`
           _sys {
             filename
             basename
+            hasReferences
             breadcrumbs
             path
             relativePath
@@ -568,11 +581,11 @@ export const PagesConnectionDocument = gql`
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      pages(variables: PagesQueryVariables, options?: C): Promise<{data: PagesQuery, variables: PagesQueryVariables, query: string}> {
-        return requester<{data: PagesQuery, variables: PagesQueryVariables, query: string}, PagesQueryVariables>(PagesDocument, variables, options);
+      pages(variables: PagesQueryVariables, options?: C): Promise<{data: PagesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesQueryVariables, query: string}> {
+        return requester<{data: PagesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesQueryVariables, query: string}, PagesQueryVariables>(PagesDocument, variables, options);
       },
-    pagesConnection(variables?: PagesConnectionQueryVariables, options?: C): Promise<{data: PagesConnectionQuery, variables: PagesConnectionQueryVariables, query: string}> {
-        return requester<{data: PagesConnectionQuery, variables: PagesConnectionQueryVariables, query: string}, PagesConnectionQueryVariables>(PagesConnectionDocument, variables, options);
+    pagesConnection(variables?: PagesConnectionQueryVariables, options?: C): Promise<{data: PagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesConnectionQueryVariables, query: string}> {
+        return requester<{data: PagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesConnectionQueryVariables, query: string}, PagesConnectionQueryVariables>(PagesConnectionDocument, variables, options);
       }
     };
   }
@@ -581,35 +594,57 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
 // TinaSDK generated code
 import { createClient, TinaClient } from "tinacms/dist/client";
 
-const generateRequester = (client: TinaClient) => {
+const generateRequester = (
+  client: TinaClient,
+) => {
   const requester: (
     doc: any,
     vars?: any,
-    options?: any,
+    options?: {
+      branch?: string,
+      /**
+       * Aside from `method` and `body`, all fetch options are passed
+       * through to underlying fetch request
+       */
+      fetchOptions?: Omit<Parameters<typeof fetch>[1], 'body' | 'method'>,
+    },
     client
-  ) => Promise<any> = async (doc, vars, _options) => {
+  ) => Promise<any> = async (doc, vars, options) => {
+    let url = client.apiUrl
+    if (options?.branch) {
+      const index = client.apiUrl.lastIndexOf('/')
+      url = client.apiUrl.substring(0, index + 1) + options.branch
+    }
     const data = await client.request({
       query: doc,
       variables: vars,
-    });
+      url,
+    }, options)
 
-    return { data: data?.data, query: doc, variables: vars || {} };
-  };
+    return { data: data?.data, errors: data?.errors, query: doc, variables: vars || {} }
+  }
 
-  return requester;
-};
+  return requester
+}
 
 /**
  * @experimental this class can be used but may change in the future
  **/
 export const ExperimentalGetTinaClient = () =>
   getSdk(
-    generateRequester(createClient({ url: "http://localhost:4001/graphql", queries }))
-  );
+    generateRequester(
+      createClient({
+        url: "https://content.tinajs.io/1.6/content/89a67b76-2eeb-474b-a082-0412a3090b6c/github/main",
+        queries,
+      })
+    )
+  )
 
-export const queries = (client: TinaClient) => {
-  const requester = generateRequester(client);
-  return getSdk(requester);
-};
+export const queries = (
+  client: TinaClient,
+) => {
+  const requester = generateRequester(client)
+  return getSdk(requester)
+}
 
   
